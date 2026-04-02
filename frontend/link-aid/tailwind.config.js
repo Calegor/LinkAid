@@ -4,15 +4,11 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        xs: { max: "480px" },
-        sm: "480px",
-        md: "768px",
-        lg: "992px",
-        xl: "1300px",
-      },
-      colors: {
-        "linkaid-blue": "#2b5a9a",
-        "linkaid-green": "#8bc53f",
+        'xs': { max: '480px' },
+        'sm': { min: '481px', max: '767px' },
+        'md': { min: '768px', max: '991px' },
+        'lg': { min: '992px', max: '1299px' },
+        'xl': '1300px', 
       },
     },
   },
