@@ -1,8 +1,14 @@
-export default function App() {
+import { Routes, Route } from "react-router-dom";
+import DefaultLayout from "./Layout/DefaultLayout";
+import Home from "./pages/Home/Home";
+
+const App = () => {
   return (
-    <div>
-      <h1>Welcome to the LinkAid</h1>
-      <p>This is a simple React site.</p>
-    </div>
+    <Routes>
+      <Route path="/" element={<DefaultLayout />}>
+        <Route index element={<Home />} />
+      </Route>
+    </Routes>
   );
-}
+};
+export default App;
