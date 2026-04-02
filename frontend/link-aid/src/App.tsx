@@ -4,11 +4,14 @@ import Home from "./pages/Home/Home";
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<DefaultLayout />}>
-        <Route index element={<Home />} />
-      </Route>
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<DefaultLayout />}>
+          <Route index element={<Home />} />
+        </Route>
+      </Routes>
+    </>
   );
 };
+
 export default App;
