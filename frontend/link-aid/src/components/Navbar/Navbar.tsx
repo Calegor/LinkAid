@@ -12,6 +12,8 @@ import {
   ArrowRight,
   Sun,
   Moon,
+  Menu,
+  X,
 } from "lucide-react";
 import logo from "../../assets/logo2.png";
 
@@ -74,22 +76,21 @@ const Navbar = () => {
     { name: "Contato", to: "/contato", icon: <Mail size={18} /> },
   ];
 
+  const buttonBaseClass =
+    "w-10 h-10 flex items-center justify-center rounded-full bg-slate-900/5 border border-slate-950/10 hover:bg-white transition-all shadow-sm cursor-pointer active:scale-95 z-[150]";
+
   return (
     <nav className="fixed top-0 left-0 w-full z-[100] px-4 pt-6 md:px-10 font-sans">
-      {/* layout glassmorphism */}
+      {/* nav */}
       <div
-        className={`max-w-[1300px] mx-auto h-20 px-8 flex items-center justify-between rounded-[2rem] transition-all duration-500 shadow-2xl relative z-[120] ${
+        className={`max-w-[1500px] mx-auto h-20 px-8 flex items-center justify-between rounded-[2rem] transition-all duration-500 shadow-2xl relative z-[120] ${
           isMenuOpen
             ? "opacity-0 invisible pointer-events-none"
             : "bg-white/10 backdrop-blur-xl border border-white/20 opacity-100 visible"
         }`}
       >
         <Link to="/" onClick={() => setIsMenuOpen(false)}>
-          <img
-            src={logo}
-            alt="LinkAid"
-            className="h-7 md:h-8 transition-all opacity-90"
-          />
+          <img src={logo} alt="LinkAid" className="h-7 md:h-8 opacity-90" />
         </Link>
 
         <div className="hidden md:flex items-center gap-10">
@@ -106,10 +107,8 @@ const Navbar = () => {
             ))}
           </div>
 
-          <button
-            onClick={toggleTheme}
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-slate-900/5 border border-slate-950/10 hover:bg-white transition-all shadow-sm cursor-pointer"
-          >
+          {/* dark/light */}
+          <button onClick={toggleTheme} className={buttonBaseClass}>
             {isDark ? (
               <Moon size={16} className="text-blue-500" />
             ) : (
@@ -119,29 +118,31 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* toggle and menu */}
-      <button
-        onClick={toggleTheme}
-        className={`md:hidden fixed top-10 right-[95px] w-10 h-10 flex items-center justify-center rounded-full transition-all duration-500 z-[150] shadow-lg cursor-pointer ${
-          isMenuOpen
-            ? "bg-white/20 backdrop-blur-md"
-            : "bg-white border border-slate-200"
-        }`}
-      >
-        {isDark ? (
-          <Moon size={18} className="text-blue-400" />
-        ) : (
-          <Sun size={18} className="text-amber-500" />
-        )}
-      </button>
+      {/* mobile bottoms */}
+      <div className="md:hidden fixed top-11 right-8 flex items-center gap-3 z-[150]">
+        {/* toggle theme */}
+        <button onClick={toggleTheme} className={buttonBaseClass}>
+          {isDark ? (
+            <Moon size={16} className="text-blue-500" />
+          ) : (
+            <Sun size={16} className="text-amber-500" />
+          )}
+        </button>
 
-      <button
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="md:hidden fixed top-9 right-8 w-12 h-12 flex items-center justify-center rounded-full shadow-lg bg-white text-slate-900 border border-slate-200 z-[150] active:scale-90 cursor-pointer"
-      >
-        <span className="text-xl">{isMenuOpen ? "✕" : "☰"}</span>
-      </button>
+        {/* open and close menu mobile */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className={buttonBaseClass}
+        >
+          {isMenuOpen ? (
+            <X size={20} className="text-slate-700" />
+          ) : (
+            <Menu size={20} className="text-slate-700" />
+          )}
+        </button>
+      </div>
 
+      {/* overlay */}
       <div
         ref={overlayRef}
         onClick={() => setIsMenuOpen(false)}
@@ -149,15 +150,15 @@ const Navbar = () => {
         style={{ opacity: 0, visibility: "hidden" }}
       />
 
-      {/* sidebar */}
+      {/* open menu */}
       <div
         ref={menuRef}
-        className="fixed top-0 right-0 h-full w-[75%] max-w-[300px] bg-white/90 backdrop-blur-3xl border-l border-white/20 shadow-2xl z-[110] flex flex-col md:hidden"
+        className="fixed top-0 right-0 h-full w-[75%] max-w-[300px] bg-white/95 backdrop-blur-3xl border-l border-white/20 shadow-2xl z-[110] flex flex-col md:hidden"
         style={{ transform: "translateX(100%)", visibility: "hidden" }}
       >
         <div className="pt-32 pb-10 px-8 flex flex-col h-full">
-          <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.3em] mb-10 opacity-70">
-            Navegação
+          <p className="text-slate-600 text-[10px] font-bold uppercase tracking-[0.3em] mb-10 opacity-70">
+            Menu
           </p>
 
           <div className="flex flex-col gap-4">
@@ -172,7 +173,7 @@ const Navbar = () => {
                   <span className="text-slate-400 group-hover:text-blue-600 transition-colors">
                     {link.icon}
                   </span>
-                  <span className="text-[16px] font-medium text-slate-900 tracking-tight">
+                  <span className="text-[16px] font-medium text-slate-700 tracking-tight">
                     {link.name}
                   </span>
                 </div>
@@ -185,7 +186,7 @@ const Navbar = () => {
           </div>
 
           <div className="mt-auto text-center border-t border-slate-100 pt-6">
-            <p className="text-slate-300 text-[9px] font-bold uppercase tracking-[0.2em]">
+            <p className="text-slate-600 text-[9px] font-bold uppercase tracking-[0.2em]">
               LinkAid • 2026
             </p>
           </div>
@@ -194,4 +195,5 @@ const Navbar = () => {
     </nav>
   );
 };
+
 export default Navbar;
