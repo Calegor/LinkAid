@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
-import FinalShowCase from "../components/FinalShowCase/FinalShowCase";
 
 const DefaultLayout = () => {
   return (
@@ -9,7 +8,6 @@ const DefaultLayout = () => {
       <Header />
       <main className="flex-grow pt-20">
         <Outlet />
-        <FinalShowCase />
       </main>
       <Footer />
     </div>
