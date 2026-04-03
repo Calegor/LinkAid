@@ -1,17 +1,10 @@
-import { ArrowRight } from "lucide-react";
-import HeroDefault from "../../Layout/HeroDefault";
+
+import AboutScrollCards from "../../components/AboutScrollCards/AboutScrollCards";
 
 const Sobre = () => {
   return (
     <main className="w-full bg-white">
-      <HeroDefault
-        titleBlack="Comunicação"
-        titleBlue="sem esforço."
-        description="Criamos o LinkAid para facilitar seu dia a dia. Organizamos suas conexões para você ganhar tempo."
-        scrollText="Explore o projeto"
-        ScrollIcon={ArrowRight}
-        highlightWord="LinkAid"
-      ></HeroDefault>
+      <AboutScrollCards />
     </main>
   );
 };
