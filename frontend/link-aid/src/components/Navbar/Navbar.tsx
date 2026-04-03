@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom"; // 👈 Importante: useLocation adicionado
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import {
@@ -18,6 +18,7 @@ import {
 import logo from "../../assets/logo2.png";
 
 const Navbar = () => {
+  const location = useLocation(); // 👈 Captura a rota atual (ex: "/sobre")
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const menuRef = useRef(null);
@@ -81,7 +82,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-[100] px-4 pt-6 md:px-10 font-sans">
-      {/* nav */}
+      {/* NAV DESKTOP */}
       <div
         className={`max-w-[1500px] mx-auto h-20 px-8 flex items-center justify-between rounded-[2rem] transition-all duration-500 shadow-2xl relative z-[120] ${
           isMenuOpen
@@ -94,55 +95,44 @@ const Navbar = () => {
         </Link>
 
         <div className="hidden md:flex items-center gap-10">
-          <div className="flex gap-8 font-bold text-[10px] tracking-[0.2em] uppercase text-slate-900/80">
-            {menuLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.to}
-                className="hover:text-blue-600 transition-all relative group py-2"
-              >
-                {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-blue-600 transition-all duration-300 group-hover:w-full" />
-              </Link>
-            ))}
+          <div className="flex gap-8 font-bold text-[10px] tracking-[0.2em] uppercase">
+            {menuLinks.map((link) => {
+              const isActive = location.pathname === link.to; // 👈 Checa se é a página atual
+              return (
+                <Link
+                  key={link.name}
+                  to={link.to}
+                  className={`transition-all relative group py-2 ${
+                    isActive ? "text-blue-600" : "text-slate-900/80 hover:text-blue-600"
+                  }`}
+                >
+                  {link.name}
+                  {/* Barrinha azul que "trava" se isActive for true */}
+                  <span className={`absolute bottom-0 left-0 h-[1.5px] bg-blue-600 transition-all duration-300 ${
+                    isActive ? "w-full" : "w-0 group-hover:w-full"
+                  }`} />
+                </Link>
+              );
+            })}
           </div>
 
-          {/* dark/light */}
           <button onClick={toggleTheme} className={buttonBaseClass}>
-            {isDark ? (
-              <Moon size={16} className="text-blue-500" />
-            ) : (
-              <Sun size={16} className="text-amber-500" />
-            )}
+            {isDark ? <Moon size={16} className="text-blue-500" /> : <Sun size={16} className="text-amber-500" />}
           </button>
         </div>
       </div>
 
-      {/* mobile bottoms */}
+      {/* MOBILE BUTTONS */}
       <div className="md:hidden fixed top-11 right-8 flex items-center gap-3 z-[150]">
-        {/* toggle theme */}
         <button onClick={toggleTheme} className={buttonBaseClass}>
-          {isDark ? (
-            <Moon size={16} className="text-blue-500" />
-          ) : (
-            <Sun size={16} className="text-amber-500" />
-          )}
+          {isDark ? <Moon size={16} className="text-blue-500" /> : <Sun size={16} className="text-amber-500" />}
         </button>
-
-        {/* open and close menu mobile */}
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className={buttonBaseClass}
-        >
-          {isMenuOpen ? (
-            <X size={20} className="text-slate-700" />
-          ) : (
-            <Menu size={20} className="text-slate-700" />
-          )}
+        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className={buttonBaseClass}>
+          {isMenuOpen ? <X size={20} className="text-slate-700" /> : <Menu size={20} className="text-slate-700" />}
         </button>
       </div>
 
-      {/* overlay */}
+      {/* OVERLAY */}
       <div
         ref={overlayRef}
         onClick={() => setIsMenuOpen(false)}
@@ -150,45 +140,45 @@ const Navbar = () => {
         style={{ opacity: 0, visibility: "hidden" }}
       />
 
-      {/* open menu */}
+      {/* MENU MOBILE OPEN */}
       <div
         ref={menuRef}
         className="fixed top-0 right-0 h-full w-[75%] max-w-[300px] bg-white/95 backdrop-blur-3xl border-l border-white/20 shadow-2xl z-[110] flex flex-col md:hidden"
         style={{ transform: "translateX(100%)", visibility: "hidden" }}
       >
         <div className="pt-32 pb-10 px-8 flex flex-col h-full">
-          <p className="text-slate-600 text-[10px] font-bold uppercase tracking-[0.3em] mb-10 opacity-70">
-            Menu
-          </p>
+          <p className="text-slate-600 text-[10px] font-bold uppercase tracking-[0.3em] mb-10 opacity-70">Menu</p>
 
           <div className="flex flex-col gap-4">
-            {menuLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.to}
-                onClick={() => setIsMenuOpen(false)}
-                className="group flex items-center justify-between py-2 transition-all"
-              >
-                <div className="flex items-center gap-4">
-                  <span className="text-slate-400 group-hover:text-blue-600 transition-colors">
-                    {link.icon}
-                  </span>
-                  <span className="text-[16px] font-medium text-slate-700 tracking-tight">
-                    {link.name}
-                  </span>
-                </div>
-                <ArrowRight
-                  size={14}
-                  className="text-slate-200 group-hover:text-blue-600 transition-all"
-                />
-              </Link>
-            ))}
+            {menuLinks.map((link) => {
+              const isActive = location.pathname === link.to; // 👈 Checa se é a página atual no mobile
+              return (
+                <Link
+                  key={link.name}
+                  to={link.to}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`group flex items-center justify-between py-2 transition-all ${
+                    isActive ? "opacity-100" : "opacity-70 hover:opacity-100"
+                  }`}
+                >
+                  <div className="flex items-center gap-4">
+                    <span className={`transition-colors ${isActive ? "text-blue-600" : "text-slate-400 group-hover:text-blue-600"}`}>
+                      {link.icon}
+                    </span>
+                    <span className={`text-[16px] tracking-tight transition-all ${
+                      isActive ? "font-bold text-blue-600" : "font-medium text-slate-700"
+                    }`}>
+                      {link.name}
+                    </span>
+                  </div>
+                  <ArrowRight size={14} className={`transition-all ${isActive ? "text-blue-600 translate-x-1" : "text-slate-200 group-hover:text-blue-600"}`} />
+                </Link>
+              );
+            })}
           </div>
 
           <div className="mt-auto text-center border-t border-slate-100 pt-6">
-            <p className="text-slate-600 text-[9px] font-bold uppercase tracking-[0.2em]">
-              LinkAid • 2026
-            </p>
+            <p className="text-slate-600 text-[9px] font-bold uppercase tracking-[0.2em]">LinkAid • 2026</p>
           </div>
         </div>
       </div>
