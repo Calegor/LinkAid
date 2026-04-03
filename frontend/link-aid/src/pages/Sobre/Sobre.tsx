@@ -3,6 +3,7 @@ import AboutMeaning from "../../components/AboutMeaning/AboutMeaning";
 import AboutScrollCards from "../../components/AboutScrollCards/AboutScrollCards";
 import AboutFeaturesOrbit from "../../components/AboutFeaturesOrbit/AboutFeaturesOrbit";
 import AboutPerformance from "../../components/AboutPerformance/AboutPerformance";
+import AboutProject from "../../components/AboutProject/AboutProject";
 
 const Sobre = () => {
   return (
@@ -11,6 +12,7 @@ const Sobre = () => {
       <AboutMeaning />
       <AboutFeaturesOrbit />
       <AboutPerformance />
+      <AboutProject />
     </main>
   );
 };
