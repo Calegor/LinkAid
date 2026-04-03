@@ -1,0 +1,58 @@
+[
+  {
+    "id": "canais",
+    "name": "Canais",
+    "desc": "Integração total com WhatsApp, Instagram e E-mail em um só lugar.",
+    "tech": "Omnichannel v2",
+    "icon": "Link2"
+  },
+  {
+    "id": "real-time",
+    "name": "Real-time",
+    "desc": "Processamento de dados instantâneo para respostas imediatas.",
+    "tech": "Websockets Low-Latency",
+    "icon": "Zap"
+  },
+  {
+    "id": "ia-triagem",
+    "name": "IA Triagem",
+    "desc": "Nossa IA analisa a urgência de cada ticket automaticamente.",
+    "tech": "LLM Custom Training",
+    "icon": "Cpu"
+  },
+  {
+    "id": "analytics",
+    "name": "Analytics",
+    "desc": "Dashboards preditivos para antecipar gargalos na operação.",
+    "tech": "Data Viz High-Res",
+    "icon": "BarChart3"
+  },
+  {
+    "id": "seguranca",
+    "name": "Segurança",
+    "desc": "Criptografia de ponta a ponta em todos os dados sensíveis.",
+    "tech": "ISO 27001 Ready",
+    "icon": "ShieldCheck"
+  },
+  {
+    "id": "global",
+    "name": "Global",
+    "desc": "Infraestrutura resiliente preparada para escala mundial.",
+    "tech": "Edge Computing",
+    "icon": "Globe"
+  },
+  {
+    "id": "modular",
+    "name": "Modular",
+    "desc": "Ative apenas os módulos que sua equipe realmente precisa.",
+    "tech": "Microservices Based",
+    "icon": "Layers"
+  },
+  {
+    "id": "mobile",
+    "name": "Mobile",
+    "desc": "Gerencie toda a sua operação na palma da sua mão.",
+    "tech": "Native Performance",
+    "icon": "Smartphone"
+  }
+]
