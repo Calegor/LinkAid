@@ -3,7 +3,6 @@
 
 @import "tailwindcss";
 
-
 @layer base {
   body {
     font-family: "Inter", sans-serif;
@@ -12,4 +11,77 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* floating and rotating animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+@keyframes slowRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+.animate-slow-rotate {
+  animation: slowRotate 30s linear infinite;
+}
+
+/* features orbit */
+
+:root {
+  --orbit-radius: 115px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --orbit-radius: 220px;
+  }
+}
+
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbit-spin-reverse {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes soft-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animate-orbit-spin {
+  animation: orbit-spin 60s linear infinite;
+}
+
+.animate-orbit-spin-reverse {
+  animation: orbit-spin-reverse 60s linear infinite;
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 3s ease-in-out infinite;
+}
+
+.pause-animation {
+  animation-play-state: paused !important;
+}
+
+.orbit-item {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
