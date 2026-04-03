@@ -11,7 +11,7 @@ interface Feature {
   tech: string;
 }
 
-const FeaturesOrbit = () => {
+const AboutFeaturesOrbit = () => {
   const [activeFeature, setActiveFeature] = useState<Feature | null>(null);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -141,4 +141,4 @@ const FeaturesOrbit = () => {
     </section>
   );
 };
-export default FeaturesOrbit;
+export default AboutFeaturesOrbit;
