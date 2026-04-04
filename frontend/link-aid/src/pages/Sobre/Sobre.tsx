@@ -5,6 +5,7 @@ import AboutFeaturesOrbit from "../../components/AboutFeaturesOrbit/AboutFeature
 import AboutPerformance from "../../components/AboutPerformance/AboutPerformance";
 import AboutProject from "../../components/AboutProject/AboutProject";
 import AboutTech from "../../components/AboutTech/AboutTech";
+import AboutClosing from "../../components/AboutClosing/AboutClosing";
 
 const Sobre = () => {
   return (
@@ -15,6 +16,7 @@ const Sobre = () => {
       <AboutPerformance />
       <AboutProject />
       <AboutTech />
+      <AboutClosing />
     </main>
   );
 };
