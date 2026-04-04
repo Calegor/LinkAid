@@ -70,7 +70,6 @@ const AboutClosing = () => {
         </div>
 
         {/* paragraph: box width increased for desktop as requested */}
-        {/* 🛠️ MODIFICAÇÃO APENAS AQUI: lg:max-w aumentado para 650px */}
         <div className="max-w-[450px] lg:max-w-[650px] mb-12 lg:mb-16">
           <p className="text-slate-500 text-base md:text-lg lg:text-xl font-light leading-relaxed tracking-tight">
             Sem complicações. Um jeito novo de organizar seu dia a dia com leveza e inteligência.
