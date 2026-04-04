@@ -1,3 +1,4 @@
+import TeamSection from "../../components/TeamSection/TeamSection";
 import HeroDefault from "../../Layout/HeroDefault";
 import { Heart } from "lucide-react";
 
@@ -12,6 +13,7 @@ const Equipe = () => {
         ScrollIcon={Heart}
         highlightWord="focado"
       ></HeroDefault>
+      <TeamSection />
     </main>
   );
 };
