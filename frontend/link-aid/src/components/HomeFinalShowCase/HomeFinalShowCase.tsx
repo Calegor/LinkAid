@@ -70,7 +70,8 @@ const HomeFinalShowCase: FC = () => {
             Toda sua operação
             <br className="hidden sm:block" />
             <span className="text-blue-600 font-light block sm:inline">
-              {" "}em um lugar.
+              {" "}
+              em um lugar.
             </span>
           </h2>
 
@@ -116,7 +117,6 @@ const HomeFinalShowCase: FC = () => {
         </div>
       </section>
 
-      {/* AJUSTE AQUI: Removi o MT-10 e usei PY-16 para preencher o fundo preto */}
       <div className="w-full flex justify-center py-20">
         <a
           href="/solucao"
