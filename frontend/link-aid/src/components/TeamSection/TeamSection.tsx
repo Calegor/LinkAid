@@ -14,6 +14,7 @@ interface Developer {
   code: string;
   link: string;
   image: string;
+  description: string;
 }
 
 if (typeof window !== "undefined") {
@@ -29,21 +30,59 @@ const TeamSection = () => {
 
   useGSAP(
     () => {
-      gsap.fromTo(
-        ".reveal-item",
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          stagger: 0.2,
-          duration: 1,
-          ease: "expo.out",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 75%",
-          },
-        },
-      );
+      if (!containerRef.current) return;
+      const items = gsap.utils.toArray<HTMLElement>(".team-row");
+
+      items.forEach((item) => {
+        const image = item.querySelector(".reveal-image");
+        const content = item.querySelector(".reveal-content");
+        const isEven = item.classList.contains("row-even");
+
+        if (image) {
+          gsap.fromTo(
+            image,
+            {
+              opacity: 0,
+              x: isEven ? -60 : 60,
+              scale: 0.9,
+              filter: "blur(10px)",
+            },
+            {
+              opacity: 1,
+              x: 0,
+              scale: 1,
+              filter: "blur(0px)",
+              duration: 1.5,
+              ease: "power4.out",
+              scrollTrigger: {
+                trigger: item,
+                start: "top 80%",
+                toggleActions: "play none none reverse",
+              },
+            },
+          );
+        }
+
+        if (content) {
+          gsap.fromTo(
+            content,
+            { opacity: 0, x: isEven ? 60 : -60, filter: "blur(15px)" },
+            {
+              opacity: 1,
+              x: 0,
+              filter: "blur(0px)",
+              duration: 1.2,
+              delay: 0.2,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: item,
+                start: "top 80%",
+                toggleActions: "play none none reverse",
+              },
+            },
+          );
+        }
+      });
     },
     { scope: containerRef },
   );
@@ -51,25 +90,19 @@ const TeamSection = () => {
   return (
     <section
       ref={containerRef}
-      /* -mt-27: puxa o componente no mobile (perfeito!)
-     lg:mt-0: remove a margem negativa no desktop para não subir demais
-     lg:pt-10: adiciona um respiro controlado apenas no topo do desktop
-  */
       className="w-full pt-0 -mt-27 lg:mt-0 lg:pt-1 pb-20 lg:pb-32 bg-white overflow-hidden relative"
     >
-      {/* background subtle glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[60vw] h-[60vw] bg-blue-50/30 blur-[120px] rounded-full -z-10" />
 
       <div className="container mx-auto px-6 max-w-[1400px] relative z-10">
-        {/* team list: avant-garde layout */}
         <div className="flex flex-col gap-32 lg:gap-64">
           {(developers as Developer[]).map((dev, index) => (
             <div
               key={dev.id}
-              className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} items-center gap-12 lg:gap-32 relative`}
+              className={`team-row ${index % 2 === 0 ? "lg:flex-row row-even" : "lg:flex-row-reverse row-odd"} flex flex-col items-center gap-12 lg:gap-32 relative`}
             >
-              {/* image side */}
-              <div className="reveal-item relative w-full lg:w-[45%] aspect-square overflow-hidden rounded-[3rem] group shadow-2xl bg-slate-50">
+              {/* images */}
+              <div className="reveal-image relative w-full lg:w-[45%] aspect-square overflow-hidden rounded-[3rem] group shadow-2xl bg-slate-50 border border-slate-100">
                 <img
                   src={getImageUrl(dev.image)}
                   alt={dev.name}
@@ -77,10 +110,9 @@ const TeamSection = () => {
                 />
               </div>
 
-              {/* content side: centralized on mobile, left/right on desktop */}
-              <div className="reveal-item w-full lg:w-1/2 space-y-8 lg:space-y-6 flex flex-col items-center lg:items-start text-center lg:text-left relative z-10">
+              {/* content */}
+              <div className="reveal-content w-full lg:w-1/2 space-y-8 lg:space-y-6 flex flex-col items-center lg:items-start text-center lg:text-left relative z-10">
                 <div className="space-y-4 lg:space-y-2 flex flex-col items-center lg:items-start">
-                  {/* labels: centered on mobile */}
                   <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
                     <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
                       <ChevronsUpDown size={12} className="text-blue-600" />
@@ -96,25 +128,23 @@ const TeamSection = () => {
                     </div>
                   </div>
 
-                  <h4 className="text-[10vw] md:text-[6vw] lg:text-[3.5vw] font-bold text-slate-950 tracking-[-0.05em] leading-[0.85] ">
+                  <h4 className="text-[10vw] md:text-[6vw] lg:text-[3.5vw] font-bold text-slate-950 tracking-[-0.05em] leading-[0.85]">
                     {dev.name}
                   </h4>
-
-                  <p className="text-xl md:text-2xl text-blue-600 font-light tracking-tight leading-none pb-2">
+                  <p className="text-xl md:text-2xl text-blue-600 font-light tracking-tight">
                     {dev.role}
                   </p>
                 </div>
 
                 <div className="h-[1px] w-20 bg-blue-600/30" />
 
+                {/* description */}
                 <p className="text-slate-500 text-base md:text-lg font-light leading-relaxed max-w-[480px] tracking-tight pt-2 lg:pt-0 mx-auto lg:mx-0">
-                  Responsável pela arquitetura e visão técnica, garantindo que o
-                  linkaid entregue excelência e inovação para cada usuário.
+                  {dev.description}
                 </p>
 
-                {/* 🛠️ APENAS OS BOTÕES: Formato Pílula em Blue e Green */}
+                {/* buttons */}
                 <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-8">
-                  {/* GITHUB PILL - GREEN */}
                   <a
                     href={dev.code}
                     target="_blank"
@@ -130,7 +160,6 @@ const TeamSection = () => {
                     </span>
                   </a>
 
-                  {/* LINKEDIN PILL - BLUE */}
                   <a
                     href={dev.link}
                     target="_blank"

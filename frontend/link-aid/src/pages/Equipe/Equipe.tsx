@@ -9,7 +9,7 @@ const Equipe = () => {
         titleBlack="Gente que"
         titleBlue="faz acontecer."
         description="Conheça as mentes por trás do LinkAid. Um time focado em criar soluções simples para conexões reais."
-        scrollText="Scroll para conhecer a equipe"
+        scrollText="Nosso time, sua rede"
         ScrollIcon={Heart}
         highlightWord="focado"
       ></HeroDefault>

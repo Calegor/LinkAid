@@ -5,6 +5,7 @@
     "rm": "RM 568275",
     "role": "Desenvolvedora Front-End",
     "class": "1TDSPA",
+    "description":"Especialista em transformar designs complexos em interfaces responsivas e intuitivas, garantindo uma experiência de usuário fluida e de alta performance no front-end." ,
     "code": "https://github.com/juliarichesky",
     "link": "https://linkedin.com/in/juliarichesky",
     "image": "julia-guimaraes.png"
@@ -15,6 +16,7 @@
     "rm": "RM 567630",
     "role": "Desenvolvedor Back-End",
     "class": "1TDSPA",
+    "description": "Arquiteto de sistemas focado na robustez e escalabilidade do backend, gerenciando integrações e fluxos de dados para sustentar toda a inteligência do LinkAid.",
     "code": "https://github.com/Calegor",
     "link": "https://www.linkedin.com/in/thiago-gramorelli-lima-070097185/",
     "image": "thiago-lima.png"
@@ -23,8 +25,9 @@
     "id": 3,
     "name": "Julia Silva Spanopoulos",
     "rm": "RM 566754",
-    "role": "Scrum Master",
+    "role": "Product Lead",
     "class": "1TDSPA",
+    "description": "Responsável por alinhar a visão de negócio à arquitetura de dados, coordenando o fluxo de desenvolvimento para garantir que cada entrega gere valor real.",
     "code": "https://github.com/juspanopoulos",
     "link": "https://www.linkedin.com/in/juspanopoulos/",
     "image": "julia-spanopoulos.png"
