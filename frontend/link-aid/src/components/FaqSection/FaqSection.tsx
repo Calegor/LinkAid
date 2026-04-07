@@ -78,30 +78,29 @@ const FaqSection = ({ searchTerm, activeId }: FaqSectionProps) => {
   return (
     <section
       ref={containerRef}
-      className="w-full mt-16 md:mt-24 lg:mt-32 pb-0 md:pb-2 lg:pb-1 bg-white relative z-20"
+      className="w-full mt-16 md:mt-24 lg:mt-32 pb-20 md:pb-32 bg-white relative z-20"
     >
-      <div className="container mx-auto max-w-[800px] px-6">
+      <div className="container mx-auto max-w-[900px] px-6">
         {isNotFound ? (
           <div className="pt-2 pb-6 lg:pb-10">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-50/50 p-4 sm:p-6 rounded-[2rem] border border-slate-100 w-full">
-              <div className="flex items-center gap-4 w-full sm:w-auto">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white shadow-sm rounded-full flex items-center justify-center shrink-0">
-                  <Search size={18} className="text-blue-600" />
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-50/50 p-6 sm:p-8 rounded-[2.5rem] border border-slate-100 w-full">
+              <div className="flex items-center gap-5 w-full sm:w-auto">
+                <div className="w-12 h-12 bg-white shadow-sm rounded-full flex items-center justify-center shrink-0">
+                  <Search size={20} className="text-blue-600" />
                 </div>
                 <div className="text-left">
-                  <h3 className="text-sm sm:text-base font-bold text-slate-700 leading-tight">
+                  <h3 className="text-base font-bold text-slate-800 tracking-tight leading-tight">
                     Nenhum resultado para{" "}
                     <span className="text-blue-600">"{searchTerm}"</span>
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
+                  <p className="text-sm text-slate-500 font-light mt-1">
                     Tente outras palavras ou limpe a busca.
                   </p>
                 </div>
               </div>
-
               <button
                 onClick={() => window.location.reload()}
-                className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-slate-200 text-sm font-bold text-slate-600 hover:text-white hover:bg-blue-600 transition-all cursor-pointer shrink-0"
+                className="w-full sm:w-auto px-8 py-3 rounded-full bg-slate-800 text-[11px] font-bold uppercase tracking-[0.2em] text-white hover:bg-blue-600 transition-all cursor-pointer active:scale-95"
               >
                 Limpar Busca
               </button>
@@ -116,48 +115,49 @@ const FaqSection = ({ searchTerm, activeId }: FaqSectionProps) => {
                 <div
                   key={item.id}
                   id={`faq-item-${item.id}`}
-                  className={`faq-item group relative transition-all duration-300 bg-white border-b border-slate-200 overflow-hidden ${isActive ? "pb-2" : ""}`}
+                  className={`faq-item group relative transition-all duration-500 bg-white border-b border-slate-100 overflow-hidden ${isActive ? "pb-4" : ""}`}
                 >
                   <button
                     onClick={() => toggleAccordion(index)}
-                    className="w-full flex items-center justify-between py-6 lg:py-8 px-4 lg:px-2 text-left cursor-pointer bg-transparent z-10"
+                    className="w-full flex items-center justify-between py-8 lg:py-10 px-2 text-left cursor-pointer bg-transparent z-10"
                   >
-                    <div className="flex items-center gap-3 lg:gap-5 pr-4">
+                    <div className="flex items-center gap-4 lg:gap-6 pr-4">
+                      {/* icon */}
                       <div
-                        className={`shrink-0 w-8 h-8 lg:w-10 lg:h-10 rounded-full flex items-center justify-center transition-colors duration-300 ${isActive ? "bg-blue-100 text-blue-600" : "bg-slate-100 text-slate-400 group-hover:bg-blue-50 group-hover:text-blue-500"}`}
+                        className={`shrink-0 w-9 h-9 lg:w-11 lg:h-11 rounded-full flex items-center justify-center transition-all duration-300 ${isActive ? "bg-blue-100 text-blue-600 shadow-inner" : "bg-slate-50 text-blue-500 border border-slate-100 group-hover:bg-blue-50 group-hover:text-blue-500"}`}
                       >
                         <HelpCircle size={18} className="lg:w-5 lg:h-5" />
                       </div>
 
+                      {/* id style */}
                       <span
-                        className={`font-mono text-xs lg:text-sm font-semibold transition-colors duration-300 ${isActive ? "text-blue-600" : "text-slate-300"}`}
+                        className={`font-mono text-[10px] lg:text-xs font-bold transition-colors duration-300 tracking-[0.3em] ${isActive ? "text-blue-600" : "text-slate-400"}`}
                       >
-                        {item.id}
+                        {item.id.toString().padStart(2, '0')}
                       </span>
 
+                      {/* question */}
                       <h3
-                        className={`text-base lg:text-xl font-bold tracking-tight transition-colors duration-300 ${isActive ? "text-blue-600" : "text-slate-600 group-hover:text-blue-600"}`}
+                        className={`text-lg lg:text-2xl font-semibold tracking-[-0.04em] leading-[1.1] transition-colors duration-300 ${isActive ? "text-blue-600" : "text-slate-600 group-hover:text-blue-600"}`}
                       >
                         {item.question}
                       </h3>
                     </div>
 
+                    {/* seta */}
                     <div
-                      className={`shrink-0 flex items-center justify-center transition-transform duration-500 ${isActive ? "rotate-180 text-blue-600" : "text-slate-300 group-hover:text-blue-600"}`}
+                      className={`shrink-0 flex items-center justify-center transition-all duration-500 ${isActive ? "rotate-180 text-blue-600" : "text-slate-300 group-hover:text-blue-600"}`}
                     >
-                      <ChevronDown
-                        size={24}
-                        className="lg:w-7 lg:h-7"
-                        strokeWidth={2.5}
-                      />
+                      <ChevronDown size={24} strokeWidth={2.5} className="lg:w-7 lg:h-7" />
                     </div>
                   </button>
 
+                  {/* resposta */}
                   <div
-                    className={`transition-all duration-500 ease-in-out ${isActive ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"}`}
+                    className={`transition-all duration-700 ease-in-out ${isActive ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"}`}
                   >
-                    <div className="pb-8 lg:pb-10 pl-[3.75rem] lg:pl-[4.75rem] pr-6 lg:pr-16">
-                      <p className="text-slate-500 text-sm lg:text-lg leading-relaxed font-medium">
+                    <div className="pb-10 lg:pb-12 pl-[6rem] lg:pl-[8.5rem] pr-6 lg:pr-24">
+                      <p className="text-slate-500 text-base lg:text-xl font-light leading-relaxed tracking-tight">
                         {item.answer}
                       </p>
                     </div>

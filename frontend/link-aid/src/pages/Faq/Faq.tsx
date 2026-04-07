@@ -64,7 +64,7 @@ const Faq = () => {
         titleBlack="O suporte que"
         titleBlue="você procura."
         description="Encontre respostas rápidas para as perguntas mais comuns sobre o LinkAid. Estamos aqui para ajudar você a navegar com clareza."
-        scrollText="Scroll para ver as perguntas"
+        scrollText="Central de ajuda"
         ScrollIcon={HelpCircle}
         highlightWord="clareza"
       />
