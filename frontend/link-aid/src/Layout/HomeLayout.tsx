@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Hero from "../components/Hero/Hero";
+import HomeHero from "../components/HomeHero/HomeHero";
 
 export default function HomeLayout({
   children,
@@ -33,7 +33,7 @@ export default function HomeLayout({
     <div className="relative flex flex-col md:flex-row min-h-screen w-full bg-white items-start">
       {/* left side content (sticky hero) */}
       <div className="w-full md:w-[45%] relative md:sticky md:top-[100px] h-auto md:h-[calc(100vh-100px)] flex items-center justify-center md:justify-end px-6 md:pr-16 py-20 md:py-0 bg-white z-20 overflow-hidden">
-        <Hero activeSection={activeSection} />
+        <HomeHero activeSection={activeSection} />
       </div>
 
       {/* right side content (scrolls normally) */}
