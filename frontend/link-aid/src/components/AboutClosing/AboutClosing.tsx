@@ -76,20 +76,20 @@ const AboutClosing = () => {
           </p>
         </div>
 
-        {/* call to action button */}
-        <button className="group">
-          <a
-            href="/solucao"
-            className="inline-flex items-center justify-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-full bg-blue-600 text-white font-bold hover:bg-blue-700 transition-all duration-500 shadow-xl shadow-blue-600/20 active:scale-95"
-          >
-            <span className="tracking-tight text-sm md:text-base">
-              Acessar o LinkAid
-            </span>
-            <span className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">
-              <ArrowUpRight size={20} />
-            </span>
-          </a>
-        </button>
+       <button>
+        {/* button */}
+      <a
+        href="/solucao"
+        className="reveal-text group relative inline-flex items-center justify-center gap-4 px-8 py-4 rounded-full bg-blue-600 text-white transition-all duration-500 shadow-xl shadow-blue-600/20 hover:bg-blue-700 hover:shadow-blue-600/40 active:scale-95 overflow-hidden"
+      >
+        <span className="relative z-10 font-bold uppercase text-[11px] tracking-[0.2em]">
+          Ver Painel Completo
+        </span>
+        <div className="relative z-10 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center transition-transform duration-500 group-hover:rotate-45 group-hover:bg-white/20">
+          <ArrowUpRight size={18} strokeWidth={2.5} />
+        </div>
+      </a>
+      </button>
       </div>
     </section>
   );
