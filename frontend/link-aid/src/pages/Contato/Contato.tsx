@@ -11,7 +11,7 @@ const Contato = () => {
         titleBlack="Adoramos uma"
         titleBlue="boa conversa."
         description="Tem alguma dúvida ou quer saber mais sobre o projeto? Nossa equipe está pronta para ouvir você e criar conexões reais."
-        scrollText="Scroll para ver canais de contato"
+        scrollText="Fale conosco"
         ScrollIcon={MessageCircle}
         highlightWord="pronta"
       >
