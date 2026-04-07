@@ -1,4 +1,4 @@
-import FinalShowCase from "../../components/FinalShowCase/FinalShowCase";
+import HomeFinalShowCase from "../../components/HomeFinalShowCase/HomeFinalShowCase";
 import HomeLayout from "../../Layout/HomeLayout";
 import { Link2, BarChart3, Rocket, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -135,7 +135,7 @@ const Home = () => {
       </HomeLayout>
 
       <div className="w-full bg-white relative z-50 border-t border-slate-100">
-        <FinalShowCase />
+        <HomeFinalShowCase />
       </div>
     </>
   );
