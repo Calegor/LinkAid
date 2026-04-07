@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom"; // 👈 Importante: useLocation adicionado
+import { Link, useLocation } from "react-router-dom"; // importante
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import {
@@ -18,7 +18,7 @@ import {
 import logo from "../../assets/logo2.png";
 
 const Navbar = () => {
-  const location = useLocation(); // 👈 Captura a rota atual (ex: "/sobre")
+  const location = useLocation(); // captura a rota atual ex: "/sobre"
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const menuRef = useRef(null);
@@ -82,7 +82,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-[100] px-4 pt-6 md:px-10 font-sans">
-      {/* NAV DESKTOP */}
+      {/* nav desktop */}
       <div
         className={`max-w-[1500px] mx-auto h-20 px-8 flex items-center justify-between rounded-[2rem] transition-all duration-500 shadow-2xl relative z-[120] ${
           isMenuOpen
@@ -97,7 +97,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-10">
           <div className="flex gap-8 font-bold text-[10px] tracking-[0.2em] uppercase">
             {menuLinks.map((link) => {
-              const isActive = location.pathname === link.to; // 👈 Checa se é a página atual
+              const isActive = location.pathname === link.to; // checa se é a página atual
               return (
                 <Link
                   key={link.name}
@@ -107,7 +107,7 @@ const Navbar = () => {
                   }`}
                 >
                   {link.name}
-                  {/* Barrinha azul que "trava" se isActive for true */}
+                  {/* barrinha azul */}
                   <span className={`absolute bottom-0 left-0 h-[1.5px] bg-blue-600 transition-all duration-300 ${
                     isActive ? "w-full" : "w-0 group-hover:w-full"
                   }`} />
@@ -122,7 +122,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* MOBILE BUTTONS */}
+      {/* mobile buttons */}
       <div className="md:hidden fixed top-11 right-8 flex items-center gap-3 z-[150]">
         <button onClick={toggleTheme} className={buttonBaseClass}>
           {isDark ? <Moon size={16} className="text-blue-500" /> : <Sun size={16} className="text-amber-500" />}
@@ -132,7 +132,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* OVERLAY */}
+      {/* overlay */}
       <div
         ref={overlayRef}
         onClick={() => setIsMenuOpen(false)}
@@ -140,7 +140,7 @@ const Navbar = () => {
         style={{ opacity: 0, visibility: "hidden" }}
       />
 
-      {/* MENU MOBILE OPEN */}
+      {/* menu mobile open */}
       <div
         ref={menuRef}
         className="fixed top-0 right-0 h-full w-[75%] max-w-[300px] bg-white/95 backdrop-blur-3xl border-l border-white/20 shadow-2xl z-[110] flex flex-col md:hidden"
@@ -151,7 +151,7 @@ const Navbar = () => {
 
           <div className="flex flex-col gap-4">
             {menuLinks.map((link) => {
-              const isActive = location.pathname === link.to; // 👈 Checa se é a página atual no mobile
+              const isActive = location.pathname === link.to; // checa se é a página atual no mobile
               return (
                 <Link
                   key={link.name}

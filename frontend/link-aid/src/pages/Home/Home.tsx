@@ -8,7 +8,6 @@ const Home = () => {
     <>
       <HomeLayout>
         <div className="relative w-full overflow-hidden mt-[-50px] bg-white">
-          {/* 🌈 Linha de Conexão Lateral */}
           <div className="absolute left-6 md:left-16 top-0 bottom-0 w-[2px] z-0 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-b from-blue-500 via-green-500 to-indigo-700 opacity-20"></div>
             <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white via-white/80 to-transparent z-10"></div>
@@ -16,7 +15,6 @@ const Home = () => {
           </div>
 
           <div className="relative z-10 flex flex-col px-4 sm:px-8 md:px-8 max-w-[1400px] mx-auto">
-            {/* 🔗 SEÇÃO 1: CONEXÕES */}
             <section
               id="sec1"
               className="relative min-h-0 sm:min-h-[80vh] md:min-h-[80vh] flex items-start sm:items-center md:items-center pl-8 sm:pl-20 md:pl-20 group py-20 sm:pt-32 md:pt-32"
@@ -33,7 +31,7 @@ const Home = () => {
                   </span>
                 </header>
 
-                {/* 🏷️ TÍTULO SUAVIZADO: text-3xl/4xl e font-semibold */}
+                {/* connections */}
                 <h2 className="text-3xl md:text-4xl font-semibold text-slate-950 mb-6 tracking-tight leading-tight">
                   Conexões <br />
                   <span className="text-blue-600 font-normal">
@@ -55,7 +53,7 @@ const Home = () => {
               </div>
             </section>
 
-            {/* 📊 SEÇÃO 2: RESULTADOS */}
+            {/* results */}
             <section
               id="sec2"
               className="relative min-h-0 sm:min-h-[80vh] md:min-h-[80vh] flex items-start sm:items-center md:items-center pl-8 sm:pl-20 md:pl-20 group py-20 sm:pt-32 md:pt-32"
@@ -91,7 +89,7 @@ const Home = () => {
               </div>
             </section>
 
-            {/* 🚀 SEÇÃO 3: TECNOLOGIA */}
+            {/* tech */}
             <section
               id="sec3"
               className="relative min-h-0 sm:min-h-[80vh] md:min-h-[80vh] flex items-start sm:items-center md:items-center pl-8 sm:pl-20 md:pl-20 group py-20 sm:pt-32 md:pt-32"
