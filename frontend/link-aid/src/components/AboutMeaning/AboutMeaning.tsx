@@ -14,7 +14,7 @@ const AboutMeaning = () => {
               <h2 className="text-[12vw] sm:text-[9vw] md:text-[6vw] lg:text-[4.5vw] font-bold text-slate-950 tracking-tighter leading-[0.85] md:leading-[0.85] lg:leading-[0.8] text-center lg:text-left">
                 O significado <br className="lg:hidden" /> do
                 <span className="text-blue-600 font-light ml-2 lg:ml-4">
-                  nome
+                  nome.
                 </span>
               </h2>
 
@@ -29,11 +29,11 @@ const AboutMeaning = () => {
             <div className="flex flex-col gap-8 w-full max-w-[480px] lg:max-w-none mx-auto lg:mx-0">
               {/* cards */}
               <div className="flex flex-row items-start gap-5 group">
-                <div className="w-14 h-14 shrink-0 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-green-600 shadow-sm transition-all duration-500 group-hover:border-green-200 group-hover:shadow-md group-hover:scale-105">
+                <div className="w-14 h-14 shrink-0 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-blue-600 shadow-sm transition-all duration-500 group-hover:border-blue-200 group-hover:shadow-md group-hover:scale-105">
                   <Link2 size={26} strokeWidth={1.5} />
                 </div>
                 <div className="space-y-1">
-                  <h4 className="text-xl font-bold text-green-600 tracking-tight">
+                  <h4 className="text-xl font-bold text-blue-600 tracking-tight">
                     Link{" "}
                     <span className="text-slate-400 font-medium text-xs ml-1">
                       (Conectar)
@@ -47,11 +47,11 @@ const AboutMeaning = () => {
                 </div>
               </div>
               <div className="flex flex-row items-start gap-5 group">
-                <div className="w-14 h-14 shrink-0 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-blue-600 shadow-sm transition-all duration-500 group-hover:border-blue-200 group-hover:shadow-md group-hover:scale-105">
+                <div className="w-14 h-14 shrink-0 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-green-600 shadow-sm transition-all duration-500 group-hover:border-green-200 group-hover:shadow-md group-hover:scale-105">
                   <HeartHandshake size={26} strokeWidth={1.5} />
                 </div>
                 <div className="space-y-1">
-                  <h4 className="text-xl font-bold text-blue-600 tracking-tight">
+                  <h4 className="text-xl font-bold text-green-600 tracking-tight">
                     Aid{" "}
                     <span className="text-slate-400 font-medium text-xs ml-1">
                       (Ajuda)
