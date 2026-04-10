@@ -69,7 +69,7 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   const menuLinks = [
-    { name: "Home", to: "/", icon: <Home size={18} /> },
+    { name: "Início", to: "/", icon: <Home size={18} /> }, //vai pro inicio
     { name: "Sobre", to: "/sobre", icon: <Info size={18} /> },
     { name: "Equipe", to: "/equipe", icon: <Users size={18} /> },
     { name: "Solução", to: "/solucao", icon: <Lightbulb size={18} /> },
