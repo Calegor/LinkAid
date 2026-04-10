@@ -62,7 +62,7 @@ const AboutPerformance = () => {
       <div className="container mx-auto px-6 max-w-[1300px]">
         <div className="flex flex-wrap justify-center items-stretch gap-y-10 md:gap-x-10 lg:gap-x-12">
           {/* communication card */}
-          <div className="stat-card opacity-0 flex flex-col items-center text-center gap-6 flex-1 min-w-[300px] max-w-[380px] p-10 rounded-[2.5rem] bg-slate-50 border border-slate-200 shadow-sm transition-all duration-500 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50 hover:-translate-y-2">
+          <div className="stat-card opacity-0 flex flex-col items-center text-center gap-6 flex-1 min-w-[300px] max-w-[380px] p-10 rounded-[2.5rem] border border-slate-200 shadow-sm transition-all duration-500 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50 hover:-translate-y-2">
             <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-blue-600 border border-slate-100">
               <Link size={24} strokeWidth={2} />
             </div>
@@ -87,7 +87,7 @@ const AboutPerformance = () => {
           </div>
 
           {/* response time card */}
-          <div className="stat-card opacity-0 flex flex-col items-center text-center gap-6 flex-1 min-w-[300px] max-w-[380px] p-10 rounded-[2.5rem] bg-slate-50 border border-slate-200 shadow-sm transition-all duration-500 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50 hover:-translate-y-2">
+          <div className="stat-card opacity-0 flex flex-col items-center text-center gap-6 flex-1 min-w-[300px] max-w-[380px] p-10 rounded-[2.5rem] border border-slate-200 shadow-sm transition-all duration-500 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50 hover:-translate-y-2">
             <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-blue-600 border border-slate-100">
               <Clock size={24} strokeWidth={2} />
             </div>
@@ -112,7 +112,7 @@ const AboutPerformance = () => {
           </div>
 
           {/* effectiveness card */}
-          <div className="stat-card opacity-0 flex flex-col items-center text-center gap-6 flex-1 min-w-[300px] max-w-[380px] p-10 rounded-[2.5rem] bg-slate-50 border border-slate-200 shadow-sm transition-all duration-500 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50 hover:-translate-y-2">
+          <div className="stat-card opacity-0 flex flex-col items-center text-center gap-6 flex-1 min-w-[300px] max-w-[380px] p-10 rounded-[2.5rem] border border-slate-200 shadow-sm transition-all duration-500 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50 hover:-translate-y-2">
             <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-blue-600 border border-slate-100">
               <Heart size={24} strokeWidth={2} />
             </div>
