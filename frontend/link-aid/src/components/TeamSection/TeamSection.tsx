@@ -1,25 +1,9 @@
 import { useRef } from "react";
-import { Code, Link, User, ChevronsUpDown } from "lucide-react";
+import { Link } from "react-router-dom";
+import developers from "../../data/developers.json";
+import { ArrowRight } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import developers from "../../data/developers.json";
-
-interface Developer {
-  id: number;
-  name: string;
-  rm: string;
-  role: string;
-  class: string;
-  code: string;
-  link: string;
-  image: string;
-  description: string;
-}
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 const TeamSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -31,58 +15,27 @@ const TeamSection = () => {
   useGSAP(
     () => {
       if (!containerRef.current) return;
-      const items = gsap.utils.toArray<HTMLElement>(".team-row");
 
-      items.forEach((item) => {
-        const image = item.querySelector(".reveal-image");
-        const content = item.querySelector(".reveal-content");
-        const isEven = item.classList.contains("row-even");
+      const items = containerRef.current.querySelectorAll(".team-item");
 
-        if (image) {
-          gsap.fromTo(
-            image,
-            {
-              opacity: 0,
-              x: isEven ? -60 : 60,
-              scale: 0.9,
-              filter: "blur(10px)",
-            },
-            {
-              opacity: 1,
-              x: 0,
-              scale: 1,
-              filter: "blur(0px)",
-              duration: 1.5,
-              ease: "power4.out",
-              scrollTrigger: {
-                trigger: item,
-                start: "top 80%",
-                toggleActions: "play none none reverse",
-              },
-            },
-          );
-        }
-
-        if (content) {
-          gsap.fromTo(
-            content,
-            { opacity: 0, x: isEven ? 60 : -60, filter: "blur(15px)" },
-            {
-              opacity: 1,
-              x: 0,
-              filter: "blur(0px)",
-              duration: 1.2,
-              delay: 0.2,
-              ease: "power3.out",
-              scrollTrigger: {
-                trigger: item,
-                start: "top 80%",
-                toggleActions: "play none none reverse",
-              },
-            },
-          );
-        }
-      });
+      gsap.fromTo(
+        items,
+        {
+          opacity: 0,
+          y: 50,
+          scale: 0.9,
+          filter: "blur(10px)",
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          filter: "blur(0px)",
+          duration: 1.2,
+          ease: "power4.out",
+          stagger: 0.2, // atraso entre a entrada de cada foto
+        },
+      );
     },
     { scope: containerRef },
   );
@@ -90,93 +43,59 @@ const TeamSection = () => {
   return (
     <section
       ref={containerRef}
-      className="w-full pt-0 -mt-27 lg:mt-0 lg:pt-1 pb-20 lg:pb-32 bg-white overflow-hidden relative"
+      className="py-24 -mt-51 -mb-5 lg:-mt-45 lg:-mb-12 bg-white"
     >
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[60vw] h-[60vw] bg-blue-50/30 blur-[120px] rounded-full -z-10" />
-
-      <div className="container mx-auto px-6 max-w-[1400px] relative z-10">
-        <div className="flex flex-col gap-32 lg:gap-64">
-          {(developers as Developer[]).map((dev, index) => (
-            <div
+      <div className="container mx-auto px-6 max-w-[1400px]">
+        {/* container */}
+        <div className="flex flex-wrap justify-center gap-12 md:gap-16">
+          {developers.map((dev) => (
+            <Link
+              to={`/equipe/${dev.id}`}
               key={dev.id}
-              className={`team-row ${index % 2 === 0 ? "lg:flex-row row-even" : "lg:flex-row-reverse row-odd"} flex flex-col items-center gap-12 lg:gap-32 relative`}
+              className="team-item group flex flex-col items-center text-center w-full sm:w-[calc(45%-1.5rem)] lg:w-[calc(33.333%-3rem)] max-w-[450px]"
             >
-              {/* images */}
-              <div className="reveal-image relative w-full lg:w-[45%] aspect-square overflow-hidden rounded-[3rem] group shadow-2xl bg-slate-50 border border-slate-100">
+              {/* cards */}
+              <div
+                className="relative w-full aspect-square overflow-hidden rounded-[3.5rem] 
+                shadow-[0_15px_60px_-15px_rgba(0,0,0,0.1)] 
+                transition-all duration-500 
+                group-hover:scale-[1.03] 
+                group-hover:shadow-[0_35px_100px_-20px_rgba(37,99,235,0.25)] 
+                border border-slate-100/50"
+              >
+                {/* images */}
                 <img
                   src={getImageUrl(dev.image)}
                   alt={dev.name}
-                  className="w-full h-full object-cover transition-transform duration-1000 scale-100 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-1000 ease-in-out group-hover:scale-110"
                 />
-              </div>
 
-              {/* content */}
-              <div className="reveal-content w-full lg:w-1/2 space-y-8 lg:space-y-6 flex flex-col items-center lg:items-start text-center lg:text-left relative z-10">
-                <div className="space-y-4 lg:space-y-2 flex flex-col items-center lg:items-start">
-                  <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
-                    <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
-                      <ChevronsUpDown size={12} className="text-blue-600" />
-                      <span className="text-slate-900 text-[10px] font-bold uppercase tracking-widest">
-                        {dev.class}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
-                      <User size={12} className="text-blue-600" />
-                      <span className="text-slate-900 text-[10px] font-bold uppercase tracking-widest">
-                        {dev.rm}
-                      </span>
-                    </div>
+                {/* overlay */}
+                <div className="absolute inset-0 bg-white/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center gap-3">
+                  {/* icon */}
+                  <div className="w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-[0_10px_25px_rgba(37,99,235,0.4)] transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
+                    <ArrowRight size={32} strokeWidth={2.5} />
                   </div>
 
-                  <h4 className="text-[10vw] md:text-[6vw] lg:text-[3.5vw] font-bold text-slate-950 tracking-[-0.05em] leading-[0.85]">
-                    {dev.name}
-                  </h4>
-                  <p className="text-xl md:text-2xl text-blue-600 font-light tracking-tight">
-                    {dev.role}
-                  </p>
-                </div>
-
-                <div className="h-[1px] w-20 bg-blue-600/30" />
-
-                {/* description */}
-                <p className="text-slate-500 text-base md:text-lg font-light leading-relaxed max-w-[480px] tracking-tight pt-2 lg:pt-0 mx-auto lg:mx-0">
-                  {dev.description}
-                </p>
-
-                {/* buttons */}
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-8">
-                  <a
-                    href={dev.code}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group flex items-center gap-3 px-6 py-3 rounded-full bg-emerald-500 text-white transition-all duration-300 hover:bg-emerald-600 hover:shadow-[0_8px_20px_rgba(16,185,129,0.3)] hover:-translate-y-1"
-                  >
-                    <Code
-                      size={16}
-                      className="transition-transform group-hover:scale-110"
-                    />
-                    <span className="text-[10px] lg:text-xs font-bold uppercase tracking-[0.2em]">
-                      github
-                    </span>
-                  </a>
-
-                  <a
-                    href={dev.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group flex items-center gap-3 px-6 py-3 rounded-full bg-blue-600 text-white transition-all duration-300 hover:bg-blue-700 hover:shadow-[0_8px_20px_rgba(37,99,235,0.3)] hover:-translate-y-1"
-                  >
-                    <Link
-                      size={16}
-                      className="transition-transform group-hover:scale-110"
-                    />
-                    <span className="text-[10px] lg:text-xs font-bold uppercase tracking-[0.2em]">
-                      linkedin
-                    </span>
-                  </a>
+                  {/* text */}
+                  <span className="text-blue-600 font-bold uppercase text-[10px] tracking-[0.3em] bg-white px-5 py-2 rounded-full shadow-lg transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500 delay-150">
+                    Ver Perfil
+                  </span>
                 </div>
               </div>
-            </div>
+
+              {/* texts */}
+              <div className="mt-8 flex flex-col items-center">
+                <h3 className="text-2xl md:text-3xl font-bold text-slate-950 tracking-tight group-hover:text-blue-600 transition-colors duration-300">
+                  {dev.name}
+                </h3>
+                <p className="text-blue-600 text-base md:text-lg font-medium mt-2 uppercase tracking-[0.2em]">
+                  {dev.role}
+                </p>
+                {/* barrinha azul */}
+                <div className="h-[2px] w-0 bg-blue-600 mt-3 group-hover:w-full transition-all duration-500 rounded-full shadow-[0_0_10px_rgba(37,99,235,0.5)]" />
+              </div>
+            </Link>
           ))}
         </div>
       </div>

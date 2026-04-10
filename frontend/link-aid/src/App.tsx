@@ -8,6 +8,7 @@ import Contato from "./pages/Contato/Contato";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import Mapa from "./pages/Mapa/Mapa";
 import NotFound from "./pages/NotFound/NotFound";
+import TeamDetails from "./components/TeamDetails/TeamDetails";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/equipe" element={<Equipe />} />
+          <Route path="/equipe/:id" element={<TeamDetails />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="/mapa" element={<Mapa />} />
