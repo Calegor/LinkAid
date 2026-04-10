@@ -84,7 +84,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full z-[100] px-4 pt-6 md:px-10 font-sans">
       {/* nav desktop */}
       <div
-        className={`max-w-[1500px] mx-auto h-20 px-8 flex items-center justify-between rounded-[2rem] transition-all duration-500 shadow-2xl relative z-[120] ${
+        className={`max-w-[2000px] mx-auto h-20 px-8 flex items-center justify-between rounded-[2rem] transition-all duration-500 shadow-2xl relative z-[120] ${
           isMenuOpen
             ? "opacity-0 invisible pointer-events-none"
             : "bg-white/10 backdrop-blur-xl border border-white/20 opacity-100 visible"
@@ -103,21 +103,29 @@ const Navbar = () => {
                   key={link.name}
                   to={link.to}
                   className={`transition-all relative group py-2 ${
-                    isActive ? "text-blue-600" : "text-slate-900/80 hover:text-blue-600"
+                    isActive
+                      ? "text-blue-600"
+                      : "text-slate-900/80 hover:text-blue-600"
                   }`}
                 >
                   {link.name}
                   {/* barrinha azul */}
-                  <span className={`absolute bottom-0 left-0 h-[1.5px] bg-blue-600 transition-all duration-300 ${
-                    isActive ? "w-full" : "w-0 group-hover:w-full"
-                  }`} />
+                  <span
+                    className={`absolute bottom-0 left-0 h-[1.5px] bg-blue-600 transition-all duration-300 ${
+                      isActive ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  />
                 </Link>
               );
             })}
           </div>
 
           <button onClick={toggleTheme} className={buttonBaseClass}>
-            {isDark ? <Moon size={16} className="text-blue-500" /> : <Sun size={16} className="text-amber-500" />}
+            {isDark ? (
+              <Moon size={16} className="text-blue-500" />
+            ) : (
+              <Sun size={16} className="text-amber-500" />
+            )}
           </button>
         </div>
       </div>
@@ -125,10 +133,21 @@ const Navbar = () => {
       {/* mobile buttons */}
       <div className="md:hidden fixed top-11 right-8 flex items-center gap-3 z-[150]">
         <button onClick={toggleTheme} className={buttonBaseClass}>
-          {isDark ? <Moon size={16} className="text-blue-500" /> : <Sun size={16} className="text-amber-500" />}
+          {isDark ? (
+            <Moon size={16} className="text-blue-500" />
+          ) : (
+            <Sun size={16} className="text-amber-500" />
+          )}
         </button>
-        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className={buttonBaseClass}>
-          {isMenuOpen ? <X size={20} className="text-slate-700" /> : <Menu size={20} className="text-slate-700" />}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className={buttonBaseClass}
+        >
+          {isMenuOpen ? (
+            <X size={20} className="text-slate-700" />
+          ) : (
+            <Menu size={20} className="text-slate-700" />
+          )}
         </button>
       </div>
 
@@ -147,7 +166,9 @@ const Navbar = () => {
         style={{ transform: "translateX(100%)", visibility: "hidden" }}
       >
         <div className="pt-32 pb-10 px-8 flex flex-col h-full">
-          <p className="text-slate-600 text-[10px] font-bold uppercase tracking-[0.3em] mb-10 opacity-70">Menu</p>
+          <p className="text-slate-500 text-[10px] font-bold uppercase tracking-[0.3em] mb-10 opacity-70">
+            Menu
+          </p>
 
           <div className="flex flex-col gap-4">
             {menuLinks.map((link) => {
@@ -162,23 +183,34 @@ const Navbar = () => {
                   }`}
                 >
                   <div className="flex items-center gap-4">
-                    <span className={`transition-colors ${isActive ? "text-blue-600" : "text-slate-400 group-hover:text-blue-600"}`}>
+                    <span
+                      className={`transition-colors ${isActive ? "text-blue-600" : "text-slate-500 group-hover:text-blue-600"}`}
+                    >
                       {link.icon}
                     </span>
-                    <span className={`text-[16px] tracking-tight transition-all ${
-                      isActive ? "font-bold text-blue-600" : "font-medium text-slate-700"
-                    }`}>
+                    <span
+                      className={`text-[16px] tracking-tight transition-all ${
+                        isActive
+                          ? "font-bold text-blue-600"
+                          : "font-medium text-slate-700"
+                      }`}
+                    >
                       {link.name}
                     </span>
                   </div>
-                  <ArrowRight size={14} className={`transition-all ${isActive ? "text-blue-600 translate-x-1" : "text-slate-200 group-hover:text-blue-600"}`} />
+                  <ArrowRight
+                    size={14}
+                    className={`transition-all ${isActive ? "text-blue-600 translate-x-1" : "text-slate-200 group-hover:text-blue-600"}`}
+                  />
                 </Link>
               );
             })}
           </div>
 
           <div className="mt-auto text-center border-t border-slate-100 pt-6">
-            <p className="text-slate-600 text-[9px] font-bold uppercase tracking-[0.2em]">LinkAid • 2026</p>
+            <p className="text-slate-500 text-[9px] font-bold uppercase tracking-[0.2em]">
+              LinkAid • 2026
+            </p>
           </div>
         </div>
       </div>
