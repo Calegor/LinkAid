@@ -15,13 +15,14 @@ const Home = () => {
           </div>
 
           <div className="relative z-10 flex flex-col px-4 sm:px-8 md:px-8 max-w-[1400px] mx-auto">
+            {/* connections */}
             <section
               id="sec1"
               className="relative min-h-0 sm:min-h-[80vh] md:min-h-[80vh] flex items-start sm:items-center md:items-center pl-8 sm:pl-20 md:pl-20 group py-20 sm:pt-32 md:pt-32"
             >
               <div className="absolute z-20 w-4 h-4 rounded-full bg-white border-[3px] border-blue-600 shadow-lg transition-all duration-500 group-hover:scale-125 top-1/2 -translate-y-1/2 left-[0px] sm:left-[-15px] md:left-[25px] lg:left-[25px] xl:left-[25px]"></div>
 
-              <div className="w-full bg-white border border-slate-100 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] transition-all duration-700 md:group-hover:-translate-y-2 p-8 sm:p-12 md:p-12 max-w-xl sm:max-w-[650px] md:max-w-[650px]">
+              <div className="w-full bg-white transition-all duration-700 md:group-hover:-translate-y-2 p-8 sm:p-12 md:p-12 max-w-xl sm:max-w-[650px] md:max-w-[650px]">
                 <header className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 md:mb-10 gap-4 sm:gap-0">
                   <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center shadow-inner transition-colors group-hover:bg-blue-600 group-hover:text-white">
                     <Link2 size={24} strokeWidth={1.5} />
@@ -31,7 +32,6 @@ const Home = () => {
                   </span>
                 </header>
 
-                {/* connections */}
                 <h2 className="text-3xl md:text-4xl font-semibold text-slate-950 mb-6 tracking-tight leading-tight">
                   Conexões <br />
                   <span className="text-blue-600 font-normal">
@@ -44,23 +44,28 @@ const Home = () => {
                   todas as partes do seu projeto em um único lugar.
                 </p>
 
-                <button className="flex items-center gap-4 text-blue-600 font-bold text-[10px] uppercase tracking-[0.2em] group/btn cursor-pointer">
+                <a
+                  href="https://link-aid-site.lovable.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 text-blue-600 font-bold text-[10px] uppercase tracking-[0.2em] group/btn cursor-pointer"
+                >
                   Explorar Solução
                   <div className="w-10 h-10 rounded-full border border-blue-100 flex items-center justify-center group-hover/btn:bg-blue-600 group-hover/btn:text-white transition-all shadow-sm">
                     <ArrowRight size={14} />
                   </div>
-                </button>
+                </a>
               </div>
             </section>
 
-            {/* results */}
+            {/* sec 2 - results */}
             <section
               id="sec2"
               className="relative min-h-0 sm:min-h-[80vh] md:min-h-[80vh] flex items-start sm:items-center md:items-center pl-8 sm:pl-20 md:pl-20 group py-20 sm:pt-32 md:pt-32"
             >
               <div className="absolute z-20 w-4 h-4 rounded-full bg-white border-[3px] border-green-500 shadow-lg transition-all duration-500 group-hover:scale-125 top-1/2 -translate-y-1/2 left-[0px] sm:left-[-15px] md:left-[25px] lg:left-[25px] xl:left-[25px]"></div>
 
-              <div className="w-full bg-white border border-slate-100 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] transition-all duration-700 md:group-hover:-translate-y-2 p-8 sm:p-12 md:p-12 max-w-xl sm:max-w-[650px] md:max-w-[650px]">
+              <div className="w-full bg-white transition-all duration-700 md:group-hover:-translate-y-2 p-8 sm:p-12 md:p-12 max-w-xl sm:max-w-[650px] md:max-w-[650px]">
                 <header className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 md:mb-10 gap-4 sm:gap-0">
                   <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-green-50 text-green-600 flex items-center justify-center shadow-inner transition-colors group-hover:bg-green-500 group-hover:text-white">
                     <BarChart3 size={24} strokeWidth={1.5} />
@@ -80,23 +85,28 @@ const Home = () => {
                   intuitivos e dados que contam uma história clara.
                 </p>
 
-                <button className="flex items-center gap-4 text-green-600 font-bold text-[10px] uppercase tracking-[0.2em] group/btn cursor-pointer">
+                <a
+                  href="https://link-aid-site.lovable.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 text-green-600 font-bold text-[10px] uppercase tracking-[0.2em] group/btn cursor-pointer"
+                >
                   Conhecer Painel
                   <div className="w-10 h-10 rounded-full border border-green-100 flex items-center justify-center group-hover/btn:bg-green-500 group-hover/btn:text-white transition-all shadow-sm">
                     <ArrowRight size={14} />
                   </div>
-                </button>
+                </a>
               </div>
             </section>
 
-            {/* tech */}
+            {/* sec 3 - tech */}
             <section
               id="sec3"
               className="relative min-h-0 sm:min-h-[80vh] md:min-h-[80vh] flex items-start sm:items-center md:items-center pl-8 sm:pl-20 md:pl-20 group py-20 sm:pt-32 md:pt-32"
             >
               <div className="absolute z-20 w-4 h-4 rounded-full bg-white border-[3px] border-indigo-700 shadow-lg transition-all duration-500 group-hover:scale-125 top-1/2 -translate-y-1/2 left-[0px] sm:left-[-15px] md:left-[25px] lg:left-[25px] xl:left-[25px]"></div>
 
-              <div className="w-full bg-white border border-slate-100 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] hover:shadow-[0_40_80px_rgba(0,0,0,0.06)] transition-all duration-700 md:group-hover:-translate-y-2 p-8 sm:p-12 md:p-12 max-w-xl sm:max-w-[650px] md:max-w-[650px]">
+              <div className="w-full bg-white transition-all duration-700 md:group-hover:-translate-y-2 p-8 sm:p-12 md:p-12 max-w-xl sm:max-w-[650px] md:max-w-[650px]">
                 <header className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 md:mb-10 gap-4 sm:gap-0">
                   <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center shadow-inner transition-colors group-hover:bg-indigo-700 group-hover:text-white">
                     <Rocket size={24} strokeWidth={1.5} />
@@ -118,7 +128,7 @@ const Home = () => {
                   garante performance constante para o seu crescimento.
                 </p>
 
-                <Link to="/solucao">
+                <Link to="/sobre">
                   <button className="flex items-center gap-4 text-indigo-700 font-bold text-[10px] uppercase tracking-[0.2em] group/btn cursor-pointer">
                     Saber Mais
                     <div className="w-10 h-10 rounded-full border border-indigo-100 flex items-center justify-center group-hover/btn:bg-indigo-700 group-hover/btn:text-white transition-all shadow-sm">

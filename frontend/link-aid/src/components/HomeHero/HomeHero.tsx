@@ -119,9 +119,11 @@ const HomeHero: FC<HeroProps> = ({ activeSection }) => {
         {current.description}
       </p>
 
-      {/* botton */}
+      {/* button */}
       <a
-        href="/solucao"
+        href="https://link-aid-site.lovable.app"
+        target="_blank"
+        rel="noopener noreferrer"
         className="hero-button-fixed group relative inline-flex items-center justify-center gap-4 px-8 py-4 rounded-full bg-blue-600 text-white transition-all duration-500 shadow-xl shadow-blue-600/20 hover:bg-blue-700 hover:shadow-blue-600/40 active:scale-95 overflow-hidden"
       >
         <span className="relative z-10 font-bold uppercase text-[11px] tracking-[0.2em]">

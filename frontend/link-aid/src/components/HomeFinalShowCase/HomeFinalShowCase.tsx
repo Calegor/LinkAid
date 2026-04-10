@@ -62,7 +62,6 @@ const HomeFinalShowCase: FC = () => {
     <>
       <section
         ref={container}
-        // Removi o PB-10 e deixei PB-20 para o dashboard não ficar colado no preto
         className="relative w-full h-auto bg-white flex flex-col items-center justify-center overflow-hidden pt-16 md:pt-32 pb-0"
       >
         <div className="container mx-auto px-6 z-20 text-center mb-16 md:mb-24 max-w-[90%] md:max-w-[800px] lg:max-w-[950px]">
@@ -119,7 +118,7 @@ const HomeFinalShowCase: FC = () => {
 
       <div className="w-full flex justify-center py-20">
         <a
-          href="/solucao"
+          href="https://link-aid-site.lovable.app"
           className="reveal-text group relative inline-flex items-center justify-center gap-4 px-8 py-4 rounded-full bg-blue-600 text-white transition-all duration-500 shadow-xl shadow-blue-600/20 hover:bg-blue-700 hover:shadow-blue-600/40 active:scale-95 overflow-hidden -mt-0"
         >
           <span className="relative z-10 font-bold uppercase text-[11px] tracking-[0.2em]">
