@@ -15,7 +15,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import logo from "../../assets/logo2.png";
+import logo from "../../assets/icons/logo.png";
 
 const Navbar = () => {
   const location = useLocation(); // captura a rota atual exemplo: "/sobre"

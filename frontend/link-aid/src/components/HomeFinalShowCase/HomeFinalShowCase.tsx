@@ -100,17 +100,22 @@ const HomeFinalShowCase: FC = () => {
               </p>
             </div>
 
+            {/* substituir pelas imagens do painel */}
+            {/* interface Desktop */}
             <img
-              src="/image.png"
-              alt="Interface Desktop"
-              className="hidden md:block w-full h-auto object-cover opacity-100"
+              src="https://placehold.co/1200x800/cccccc/white?text=LinkAid+Desktop"
+              alt="Interface Desktop Placeholder"
+              className="hidden md:block w-full h-auto object-cover opacity-100 rounded-2xl"
             />
+
+            {/* interface Mobile */}
             <img
-              src="/image2.png"
-              alt="Interface Mobile"
-              className="block md:hidden w-full h-auto object-cover opacity-100"
+              src="https://placehold.co/400x600/cccccc/white?text=LinkAid+Mobile"
+              alt="Interface Mobile Placeholder"
+              className="block md:hidden w-full h-auto object-cover opacity-100 rounded-2xl"
             />
           </div>
+          {/* substituir pelas imagens do painel */}
 
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-blue-400/10 blur-[120px] -z-10 rounded-full" />
         </div>

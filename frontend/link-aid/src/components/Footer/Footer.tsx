@@ -14,7 +14,7 @@ import {
   HelpCircle,
   Mail,
 } from "lucide-react";
-import logo from "../../assets/logo2.png";
+import logo from "../../assets/icons/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

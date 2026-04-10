@@ -1,5 +1,5 @@
 import { Link2, HeartHandshake } from "lucide-react";
-import LogoLinkAid from "../../assets/logo2.png";
+import LogoLinkAid from "../../assets/icons/logo.png";
 import "../../index.css";
 
 const AboutMeaning = () => {
