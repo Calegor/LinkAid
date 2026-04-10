@@ -40,12 +40,13 @@ const HeroDefault = ({
           <div className="w-full lg:w-fit shrink-0">
             <h1
               className="font-bold text-slate-950 tracking-[-0.05em] leading-[0.85]
-                           text-[14vw] sm:text-[12vw] md:text-[10vw] 
+                           text-[12vw] sm:text-[12vw] md:text-[10vw] 
                            lg:text-[7vw] lg:max-w-none 
                            xl:text-[6vw]"
             >
               {titleBlack} <br />
-              <span className="text-blue-600 font-light block whitespace-nowrap">
+              {/* Removido o whitespace-nowrap para evitar que o texto saia da tela */}
+              <span className="text-blue-600 font-light block">
                 {titleBlue}
               </span>
             </h1>
