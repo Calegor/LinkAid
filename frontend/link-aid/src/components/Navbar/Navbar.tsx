@@ -69,10 +69,15 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   const menuLinks = [
-    { name: "Início", to: "/", icon: <Home size={18} /> }, //vai pro inicio
+    { name: "Início", to: "/", icon: <Home size={18} /> },
     { name: "Sobre", to: "/sobre", icon: <Info size={18} /> },
     { name: "Equipe", to: "/equipe", icon: <Users size={18} /> },
-    { name: "Solução", to: "/solucao", icon: <Lightbulb size={18} /> },
+    {
+      name: "Solução",
+      to: "https://link-aid-site.lovable.app",
+      icon: <Lightbulb size={18} />,
+      external: true, // marcação para link externo
+    },
     { name: "FAQ", to: "/faq", icon: <HelpCircle size={18} /> },
     { name: "Contato", to: "/contato", icon: <Mail size={18} /> },
   ];
@@ -97,24 +102,40 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-10">
           <div className="flex gap-8 font-bold text-[10px] tracking-[0.2em] uppercase">
             {menuLinks.map((link) => {
-              const isActive = location.pathname === link.to; // checa se é a página atual
-              return (
-                <Link
-                  key={link.name}
-                  to={link.to}
-                  className={`transition-all relative group py-2 ${
-                    isActive
-                      ? "text-blue-600"
-                      : "text-slate-900/80 hover:text-blue-600"
-                  }`}
-                >
+              const isActive = location.pathname === link.to;
+
+              const linkStyles = `transition-all relative group py-2 ${
+                isActive
+                  ? "text-blue-600"
+                  : "text-slate-900/80 hover:text-blue-600"
+              }`;
+
+              // name + barrinha azul
+              const linkContent = (
+                <>
                   {link.name}
-                  {/* barrinha azul */}
                   <span
                     className={`absolute bottom-0 left-0 h-[1.5px] bg-blue-600 transition-all duration-300 ${
                       isActive ? "w-full" : "w-0 group-hover:w-full"
                     }`}
                   />
+                </>
+              );
+
+              // se for externo, renderiza <a>, se não, renderiza <Link>
+              return link.external ? (
+                <a
+                  key={link.name}
+                  href={link.to}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkStyles}
+                >
+                  {linkContent}
+                </a>
+              ) : (
+                <Link key={link.name} to={link.to} className={linkStyles}>
+                  {linkContent}
                 </Link>
               );
             })}
