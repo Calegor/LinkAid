@@ -25,13 +25,17 @@ const Footer = () => {
 
   return (
     <footer className="w-full px-4 pb-10 md:px-10 mt-20 font-sans">
-      <div className="max-w-[1500px] mx-auto bg-white/10 backdrop-blur-xl border border-white/20 rounded-[3rem] p-8 md:p-12 shadow-2xl">
+      <div className="max-w-[2000px] mx-auto bg-white/10 backdrop-blur-xl border border-white/20 rounded-[3rem] p-8 md:p-12 shadow-[0_-25px_50px_-12px_rgba(0,0,0,0.25)]">
         {/* grid */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
           {/* branding and slogan */}
           <div className="col-span-1 lg:col-span-2 flex flex-col items-center lg:items-start space-y-6 text-center lg:text-left">
-            <img src={logo} alt="LinkAid" className="h-8 w-fit opacity-100" />
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 leading-relaxed max-w-[280px]">
+            <img
+              src={logo}
+              alt="LinkAid"
+              className="h-8 w-auto object-contain opacity-100"
+            />
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 leading-relaxed max-w-[280px]">
               Unindo propósitos e simplificando a{" "}
               <span className="text-blue-500">gestão social</span> com
               inteligência e inovação.
@@ -86,7 +90,7 @@ const Footer = () => {
                   <Link
                     key={item.label}
                     to={item.path}
-                    className="group flex flex-row items-center gap-3 text-[13px] font-medium text-slate-400 hover:text-blue-500 transition-all tracking-tight w-[110px] lg:w-full"
+                    className="group flex flex-row items-center gap-3 text-[13px] font-medium text-slate-500 hover:text-blue-500 transition-all tracking-tight w-[110px] lg:w-full"
                   >
                     <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-white/5 border border-white/10   hover:text-blue-500 transition-all">
                       {item.icon}
@@ -106,14 +110,18 @@ const Footer = () => {
                 {[
                   { icon: <Camera size={14} />, label: "Instagram", url: "#" },
                   { icon: <GitFork size={14} />, label: "LinkedIn", url: "#" },
-                  { icon: <Code size={14} />, label: "GitHub", url: "https://github.com/Calegor/LinkAid" },
+                  {
+                    icon: <Code size={14} />,
+                    label: "GitHub",
+                    url: "https://github.com/Calegor/LinkAid",
+                  },
                 ].map((social, i) => (
                   <a
                     key={i}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex flex-row items-center gap-3 text-[13px] font-medium text-slate-400 hover:text-green-500 transition-all w-[110px] lg:w-full"
+                    className="group flex flex-row items-center gap-3 text-[13px] font-medium text-slate-500 hover:text-green-500 transition-all w-[110px] lg:w-full"
                   >
                     <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 hover:text-green-500 transition-all">
                       {social.icon}
@@ -149,7 +157,7 @@ const Footer = () => {
                 <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest block">
                   Desenvolvedores
                 </span>
-                <p className="text-[11px] text-slate-400 font-medium">
+                <p className="text-[11px] text-slate-500 font-medium">
                   Julia Guimarães • Thiago Gramorelli • Julia Spanopoulos
                 </p>
               </div>
@@ -157,27 +165,22 @@ const Footer = () => {
                 <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest block">
                   Designer
                 </span>
-                <p className="text-[11px] text-slate-400 font-medium tracking-tight">
+                <p className="text-[11px] text-slate-500 font-medium tracking-tight">
                   Julia Guimarães
                 </p>
               </div>
             </div>
 
             <div className="flex flex-col items-center lg:items-end gap-6">
-              <div className="flex gap-4 text-[10px] font-bold uppercase tracking-widest text-slate-500">
-                <a href="#" className="hover:text-blue-500 transition">
-                  Termos
-                </a>
-                <a href="#" className="hover:text-blue-500 transition">
-                  Privacidade
-                </a>
-              </div>
-              <div className="flex items-center gap-2 text-slate-400 bg-white/5 px-4 py-2 rounded-full border border-white/10 font-bold text-[11px]">
+              <div className="flex items-center gap-2 text-slate-500 bg-white/5 px-4 py-2 rounded-full border border-white/10 font-bold text-[11px]">
                 © {currentYear} • FEITO COM{" "}
                 <Heart
                   size={10}
                   className="fill-red-500 text-red-500 animate-pulse"
-                />
+                /> ||
+                <Link to="/mapa" className="hover:text-blue-500 transition">
+                 MAPA DO SITE
+                </Link>
               </div>
             </div>
           </div>
