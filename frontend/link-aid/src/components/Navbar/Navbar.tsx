@@ -18,7 +18,7 @@ import {
 import logo from "../../assets/logo2.png";
 
 const Navbar = () => {
-  const location = useLocation(); // captura a rota atual ex: "/sobre"
+  const location = useLocation(); // captura a rota atual exemplo: "/sobre"
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const menuRef = useRef(null);
