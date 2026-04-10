@@ -13,10 +13,8 @@ const AboutPerformance = () => {
 
   useGSAP(
     () => {
-      // clear existing triggers to prevent conflicts
       ScrollTrigger.getAll().forEach((t) => t.kill());
 
-      // entrance animation for cards
       gsap.fromTo(
         ".stat-card",
         { opacity: 0, y: 20 },
@@ -34,7 +32,6 @@ const AboutPerformance = () => {
         },
       );
 
-      // numerical counting animation
       const counters = gsap.utils.toArray(".stat-number");
       counters.forEach((counter) => {
         const el = counter as HTMLElement;
@@ -60,18 +57,17 @@ const AboutPerformance = () => {
   return (
     <section
       ref={containerRef}
-      /* padding top reduced to pull section up as requested */
       className="w-full pt-10 pb-24 md:pt-25 md:pb-32 bg-white relative"
     >
       <div className="container mx-auto px-6 max-w-[1300px]">
         <div className="flex flex-wrap justify-center items-stretch gap-y-10 md:gap-x-10 lg:gap-x-12">
           {/* communication card */}
-          <div className="stat-card opacity-0 flex flex-col items-center text-center gap-6 flex-1 min-w-[300px] max-w-[380px] p-10 rounded-[2.5rem] bg-slate-50 border border-slate-200 shadow-sm transition-all duration-500 hover:bg-white hover:shadow-xl hover:-translate-y-2">
+          <div className="stat-card opacity-0 flex flex-col items-center text-center gap-6 flex-1 min-w-[300px] max-w-[380px] p-10 rounded-[2.5rem] bg-slate-50 border border-slate-200 shadow-sm transition-all duration-500 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50 hover:-translate-y-2">
             <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-blue-600 border border-slate-100">
               <Link size={24} strokeWidth={2} />
             </div>
             <div className="space-y-2">
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">
                 Central de Comunicação
               </span>
               <div className="flex items-baseline justify-center gap-1">
@@ -91,12 +87,12 @@ const AboutPerformance = () => {
           </div>
 
           {/* response time card */}
-          <div className="stat-card opacity-0 flex flex-col items-center text-center gap-6 flex-1 min-w-[300px] max-w-[380px] p-10 rounded-[2.5rem] bg-slate-50 border border-slate-200 shadow-sm transition-all duration-500 hover:bg-white hover:shadow-xl hover:-translate-y-2">
+          <div className="stat-card opacity-0 flex flex-col items-center text-center gap-6 flex-1 min-w-[300px] max-w-[380px] p-10 rounded-[2.5rem] bg-slate-50 border border-slate-200 shadow-sm transition-all duration-500 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50 hover:-translate-y-2">
             <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-blue-600 border border-slate-100">
               <Clock size={24} strokeWidth={2} />
             </div>
             <div className="space-y-2">
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">
                 Tempo de Resposta
               </span>
               <div className="flex items-baseline justify-center gap-1">
@@ -116,12 +112,12 @@ const AboutPerformance = () => {
           </div>
 
           {/* effectiveness card */}
-          <div className="stat-card opacity-0 flex flex-col items-center text-center gap-6 flex-1 min-w-[300px] max-w-[380px] p-10 rounded-[2.5rem] bg-slate-50 border border-slate-200 shadow-sm transition-all duration-500 hover:bg-white hover:shadow-xl hover:-translate-y-2">
+          <div className="stat-card opacity-0 flex flex-col items-center text-center gap-6 flex-1 min-w-[300px] max-w-[380px] p-10 rounded-[2.5rem] bg-slate-50 border border-slate-200 shadow-sm transition-all duration-500 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50 hover:-translate-y-2">
             <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-blue-600 border border-slate-100">
               <Heart size={24} strokeWidth={2} />
             </div>
             <div className="space-y-2">
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">
                 Triagem Efetiva
               </span>
               <div className="flex items-baseline justify-center gap-1">
