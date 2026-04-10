@@ -25,7 +25,7 @@ const AboutMeaning = () => {
               </p>
             </div>
 
-            {/* meanings 🛠️ */}
+            {/* meanings */}
             <div className="flex flex-col gap-8 w-full max-w-[480px] lg:max-w-none mx-auto lg:mx-0">
               {/* cards */}
               <div className="flex flex-row items-start gap-5 group">
@@ -39,7 +39,6 @@ const AboutMeaning = () => {
                       (Conectar)
                     </span>
                   </h4>
-                  {/* Aplicando suas configurações de espaçamento aqui 🛠️ */}
                   <p className="text-slate-500 text-base md:text-lg font-light leading-relaxed tracking-tight">
                     Centralização de canais e a conexão direta entre quem
                     precisa e quem pode ajudar.
