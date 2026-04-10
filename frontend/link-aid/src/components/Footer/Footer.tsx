@@ -30,11 +30,16 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
           {/* branding and slogan */}
           <div className="col-span-1 lg:col-span-2 flex flex-col items-center lg:items-start space-y-6 text-center lg:text-left">
-            <img
-              src={logo}
-              alt="LinkAid"
-              className="h-8 w-auto object-contain opacity-100"
-            />
+            <Link
+              to="/"
+              className="cursor-pointer transition-opacity hover:opacity-80"
+            >
+              <img
+                src={logo}
+                alt="LinkAid"
+                className="h-8 w-auto object-contain opacity-100"
+              />
+            </Link>
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 leading-relaxed max-w-[280px]">
               Unindo propósitos e simplificando a{" "}
               <span className="text-blue-500">gestão social</span> com
@@ -64,7 +69,7 @@ const Footer = () => {
               </h3>
               <nav className="flex flex-col items-center lg:items-start gap-4">
                 {[
-                  { label: "Home", path: "/", icon: <Home size={14} /> },
+                  { label: "Início", path: "/", icon: <Home size={14} /> },
                   { label: "Sobre", path: "/sobre", icon: <Info size={14} /> },
                   {
                     label: "Equipe",
@@ -177,9 +182,10 @@ const Footer = () => {
                 <Heart
                   size={10}
                   className="fill-red-500 text-red-500 animate-pulse"
-                /> ||
+                />{" "}
+                ||
                 <Link to="/mapa" className="hover:text-blue-500 transition">
-                 MAPA DO SITE
+                  MAPA DO SITE
                 </Link>
               </div>
             </div>
