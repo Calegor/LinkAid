@@ -159,7 +159,7 @@ O LinkAid foi projetado como uma arquitetura modular, onde cada componente possu
    - classificar o tipo de usuário  
    - sugerir direcionamentos  
 
-4. 🎫 **Sistema de Ticketing**  
+4. 🎫 **Sistema de Ticketing**  <- NÃO IMPLEMENTADO ESSA SPRINT**
    Cada interação se torna um ticket com:
    - status  
    - histórico  
@@ -177,7 +177,7 @@ O LinkAid foi projetado como uma arquitetura modular, onde cada componente possu
 
 ---
 
-### 🧩 Integração entre os Módulos (não implementado nessa sprint**)
+### 🧩 Integração entre os Módulos <- NÃO IMPLEMENTADO ESSA SPRINT**
 
 - Frontend → Java API  
 - Java → Python (IA)  
