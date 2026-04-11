@@ -159,12 +159,6 @@ O LinkAid foi projetado como uma arquitetura modular, onde cada componente possu
    - classificar o tipo de usuário  
    - sugerir direcionamentos  
 
-3. ☕ **Orquestração e Regras de Negócio (Java)**  
-   A camada Java:
-   - aplica regras de negócio  
-   - cria e gerencia tickets  
-   - define prioridades e responsáveis  
-
 4. 🎫 **Sistema de Ticketing**  
    Cada interação se torna um ticket com:
    - status  
@@ -208,6 +202,12 @@ O LinkAid foi projetado como uma arquitetura modular, onde cada componente possu
 > O LinkAid é uma plataforma pensada para evolução contínua. !-->
 
 <br/>
+
+1. ☕ Orquestração e Regras de Negócio (Java)  
+   A camada Java:
+   - registra doações  
+   - cria e gerencia tickets  
+   - define prioridades e responsáveis  
 
 ## 🌍 Exemplos de Aplicação
 
