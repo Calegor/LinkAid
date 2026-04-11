@@ -50,8 +50,6 @@ const ContactForm = () => {
 
   return (
     <section className="w-full pt-1 -mt-10 pb-12 lg:pt-0 lg:-mt-10 lg:pb-32 relative overflow-hidden">
-      <div className="absolute top-0 left-[-10%] w-[300px] lg:w-[500px] h-[300px] lg:h-[500px] bg-blue-100/30 blur-[80px] lg:blur-[120px] rounded-full pointer-events-none -z-0" />
-
       <div className="container mx-auto px-6 max-w-[1200px] relative z-10 lg:pt-3">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center lg:pl-32">
           <div className="flex flex-col text-center lg:text-right order-1 lg:order-2 lg:pr-10">
