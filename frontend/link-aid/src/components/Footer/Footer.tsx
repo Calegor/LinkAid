@@ -24,11 +24,9 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full px-4 pb-10 md:px-10 mt-20 font-sans">
-      <div className="max-w-[2000px] mx-auto bg-white/10 backdrop-blur-xl border border-white/20 rounded-[3rem] p-8 md:p-12 shadow-[0_-25px_50px_-12px_rgba(0,0,0,0.25)]">
-        {/* grid */}
+    <footer className="w-full px-4 md:px-10 pb-0 mt-20 font-sans">
+      <div className="max-w-[2000px] mx-auto bg-white/10 backdrop-blur-xl border border-white/20 p-8 md:p-12 shadow-[0_-25px_50px_-12px_rgba(0,0,0,0.25)] rounded-t-[3rem] rounded-b-none border-b-0">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
-          {/* branding and slogan */}
           <div className="col-span-1 lg:col-span-2 flex flex-col items-center lg:items-start space-y-6 text-center lg:text-left">
             <Link
               to="/"
@@ -37,7 +35,7 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="LinkAid"
-                className="h-8 w-auto object-contain opacity-100"
+                className="h-8 w-auto object-contain"
               />
             </Link>
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 leading-relaxed max-w-[280px]">
@@ -60,9 +58,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* navigation and social */}
           <div className="col-span-1 lg:col-span-2 grid grid-cols-2 gap-8 w-full">
-            {/* navigation */}
             <div className="flex flex-col items-center lg:items-start gap-5">
               <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-500">
                 Navegar
@@ -78,8 +74,9 @@ const Footer = () => {
                   },
                   {
                     label: "Solução",
-                    path: "/solucao",
+                    path: "https://link-aid-site.lovable.app",
                     icon: <Lightbulb size={14} />,
+                    external: true, // marcador para sabermos que é externo
                   },
                   {
                     label: "FAQ",
@@ -91,22 +88,43 @@ const Footer = () => {
                     path: "/contato",
                     icon: <Mail size={14} />,
                   },
-                ].map((item) => (
-                  <Link
-                    key={item.label}
-                    to={item.path}
-                    className="group flex flex-row items-center gap-3 text-[13px] font-medium text-slate-500 hover:text-blue-500 transition-all tracking-tight w-[110px] lg:w-full"
-                  >
-                    <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-white/5 border border-white/10   hover:text-blue-500 transition-all">
-                      {item.icon}
-                    </span>
-                    <span className="whitespace-nowrap">{item.label}</span>
-                  </Link>
-                ))}
+                ].map((item) => {
+                  const linkClasses =
+                    "group flex flex-row items-center gap-3 text-[13px] font-medium text-slate-500 hover:text-blue-500 transition-all tracking-tight w-[110px] lg:w-full";
+                  const iconWrapperClasses =
+                    "flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 hover:text-blue-500 transition-all";
+
+                  // se for externo, renderiza a tag <a>
+                  if (item.external) {
+                    return (
+                      <a
+                        key={item.label}
+                        href={item.path}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={linkClasses}
+                      >
+                        <span className={iconWrapperClasses}>{item.icon}</span>
+                        <span className="whitespace-nowrap">{item.label}</span>
+                      </a>
+                    );
+                  }
+
+                  // se for interno, mantém o <Link>
+                  return (
+                    <Link
+                      key={item.label}
+                      to={item.path}
+                      className={linkClasses}
+                    >
+                      <span className={iconWrapperClasses}>{item.icon}</span>
+                      <span className="whitespace-nowrap">{item.label}</span>
+                    </Link>
+                  );
+                })}
               </nav>
             </div>
 
-            {/* connect us */}
             <div className="flex flex-col items-center lg:items-start gap-5">
               <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-green-500">
                 Conectar
@@ -138,23 +156,22 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* top */}
+          {/* button */}
           <div className="col-span-1 flex flex-col items-center lg:items-end justify-center lg:h-full py-8 lg:py-0">
             <button
               onClick={scrollToTop}
-              className="group flex flex-col items-center gap-5 transition-all"
+              className="group flex items-center gap-4 px-6 py-3 rounded-full bg-slate-900/5 border border-slate-950/10 hover:bg-blue-600 hover:border-blue-600 transition-all duration-500 shadow-sm hover:shadow-blue-500/20 cursor-pointer"
             >
-              <div className="w-14 h-14 rounded-3xl bg-blue-600 backdrop-blur-sm border border-blue-600 flex items-center justify-center text-white group-hover:bg-green-600 group-hover:text-white group-hover:border-green-600 transition-all duration-500 shadow-xl cursor-pointer">
-                <ChevronUp size={24} />
-              </div>
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 transition-colors">
-                Voltar ao Topo
+              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 group-hover:text-white transition-colors">
+                Topo
               </span>
+              <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-lg group-hover:bg-white group-hover:text-blue-600 transition-all">
+                <ChevronUp size={16} />
+              </div>
             </button>
           </div>
         </div>
 
-        {/* credits */}
         <div className="mt-12 pt-8 border-t border-white/5">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-8 text-center lg:text-left">
             <div className="flex flex-col sm:flex-row gap-6 lg:gap-12">
@@ -184,7 +201,10 @@ const Footer = () => {
                   className="fill-red-500 text-red-500 animate-pulse"
                 />{" "}
                 ||
-                <Link to="/mapa" className="hover:text-blue-500 transition">
+                <Link
+                  to="/mapa"
+                  className="hover:text-blue-500 transition ml-2"
+                >
                   MAPA DO SITE
                 </Link>
               </div>

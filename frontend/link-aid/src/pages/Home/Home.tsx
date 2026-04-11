@@ -144,9 +144,7 @@ const Home = () => {
         </div>
       </HomeLayout>
 
-      <div className="w-full bg-white relative z-50 border-t border-slate-100">
         <HomeFinalShowCase />
-      </div>
     </>
   );
 };

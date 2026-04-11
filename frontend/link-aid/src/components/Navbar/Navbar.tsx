@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom"; // importante
+import { Link, useLocation } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import {
@@ -18,7 +18,7 @@ import {
 import logo from "../../assets/icons/logo.png";
 
 const Navbar = () => {
-  const location = useLocation(); // captura a rota atual exemplo: "/sobre"
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const menuRef = useRef(null);
@@ -76,7 +76,7 @@ const Navbar = () => {
       name: "Solução",
       to: "https://link-aid-site.lovable.app",
       icon: <Lightbulb size={18} />,
-      external: true, // marcação para link externo
+      external: true,
     },
     { name: "FAQ", to: "/faq", icon: <HelpCircle size={18} /> },
     { name: "Contato", to: "/contato", icon: <Mail size={18} /> },
@@ -86,13 +86,13 @@ const Navbar = () => {
     "w-10 h-10 flex items-center justify-center rounded-full bg-slate-900/5 border border-slate-950/10 hover:bg-white transition-all shadow-sm cursor-pointer active:scale-95 z-[150]";
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-[100] px-4 pt-6 md:px-10 font-sans">
+    <nav className="fixed top-0 left-0 w-full z-[100] px-4 pt-0 md:px-10 font-sans">
       {/* nav desktop */}
       <div
-        className={`max-w-[2000px] mx-auto h-20 px-8 flex items-center justify-between rounded-[2rem] transition-all duration-500 shadow-2xl relative z-[120] ${
+        className={`max-w-[2000px] mx-auto h-20 px-8 flex items-center justify-between rounded-b-[2rem] transition-all duration-500 shadow-2xl relative z-[120] ${
           isMenuOpen
             ? "opacity-0 invisible pointer-events-none"
-            : "bg-white/10 backdrop-blur-xl border border-white/20 opacity-100 visible"
+            : "bg-white/10 backdrop-blur-xl border border-white/20 border-t-0 opacity-100 visible"
         }`}
       >
         <Link to="/" onClick={() => setIsMenuOpen(false)}>
@@ -110,7 +110,6 @@ const Navbar = () => {
                   : "text-slate-900/80 hover:text-blue-600"
               }`;
 
-              // name + barrinha azul
               const linkContent = (
                 <>
                   {link.name}
@@ -122,7 +121,6 @@ const Navbar = () => {
                 </>
               );
 
-              // se for externo, renderiza <a>, se não, renderiza <Link>
               return link.external ? (
                 <a
                   key={link.name}
@@ -152,7 +150,7 @@ const Navbar = () => {
       </div>
 
       {/* mobile buttons */}
-      <div className="md:hidden fixed top-11 right-8 flex items-center gap-3 z-[150]">
+      <div className="md:hidden fixed top-5 right-8 flex items-center gap-3 z-[150]">
         <button onClick={toggleTheme} className={buttonBaseClass}>
           {isDark ? (
             <Moon size={16} className="text-blue-500" />
@@ -193,7 +191,7 @@ const Navbar = () => {
 
           <div className="flex flex-col gap-4">
             {menuLinks.map((link) => {
-              const isActive = location.pathname === link.to; // checa se é a página atual no mobile
+              const isActive = location.pathname === link.to;
               return (
                 <Link
                   key={link.name}
