@@ -240,8 +240,8 @@ O LinkAid pode ser utilizado em diversos contextos:
 ```
 LinkAid/
 ├── front-end/        # React + TypeScript
-├── java/             # API e regras de negócio (Spring Boot)
-├── python/           # Processamento e IA (FastAPI)
+├── java/             # Criação e gereciamento de tickets (jdbc)
+├── python/           # CRUD de pessoas (oracledb), ***Processamento e IA (FastAPI)*** < - Acho melhor colocar na pasta de chatbot
 ├── database/         # Modelagem e scripts SQL
 ├── business-model/   # Documentação e diagramas
 └── ia-chatbot/       # Modelos de IA
