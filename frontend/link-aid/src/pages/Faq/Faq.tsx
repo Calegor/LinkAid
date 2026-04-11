@@ -61,8 +61,8 @@ const Faq = () => {
   return (
     <main className="w-full relative overflow-x-clip">
       <HeroDefault
-        titleBlack="O suporte que"
-        titleBlue="você procura."
+        titleBlack="Esclareça as"
+        titleBlue="suas dúvidas."
         description="Encontre respostas rápidas para as perguntas mais comuns sobre o LinkAid. Estamos aqui para ajudar você a navegar com clareza."
         scrollText="Central de ajuda"
         ScrollIcon={HelpCircle}

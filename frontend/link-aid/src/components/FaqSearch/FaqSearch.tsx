@@ -30,7 +30,7 @@ const FaqSearch = ({
 
   return (
     <div className="flex flex-col items-center lg:items-start w-full relative">
-      <div className="relative group z-50 w-full max-w-[90%] md:max-w-[500px] lg:max-w-[800px]">
+      <div className="relative group z-50 w-full max-w-[90%] md:max-w-[520px] xl:max-w-[750px]">
         <Search
           className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-600 transition-colors"
           size={22}
