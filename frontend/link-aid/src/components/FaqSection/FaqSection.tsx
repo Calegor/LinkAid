@@ -78,7 +78,7 @@ const FaqSection = ({ searchTerm, activeId }: FaqSectionProps) => {
   return (
     <section
       ref={containerRef}
-      className="w-full mt-16 md:mt-24 lg:mt-32 pb-20 md:pb-32 bg-white relative z-20"
+      className="w-full mt-16 -mb-10 md:mt-24 lg:mt-32 lg:-mb-10 pb-0 -md:pb-50 bg-white relative z-20"
     >
       <div className="container mx-auto max-w-[900px] px-6">
         {isNotFound ? (
