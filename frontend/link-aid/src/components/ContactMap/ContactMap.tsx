@@ -49,7 +49,7 @@ const ContactMap: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20 items-center">
           {/* title + paragraph */}
           <div className="flex flex-col gap-4 items-center lg:items-start">
-            <span className="font-mono text-blue-600 text-[10px] font-bold uppercase tracking-[0.3em]">
+            <span className="font-mono text-blue-600 text-[11px] font-bold uppercase tracking-[0.3em]">
               Localização
             </span>
             <h2 className="text-[12vw] sm:text-[9vw] md:text-[6vw] lg:text-[4.5vw] font-bold text-slate-950 tracking-tighter leading-[0.85] text-center lg:text-left">
@@ -73,7 +73,7 @@ const ContactMap: React.FC = () => {
                   <MapPin size={22} strokeWidth={1.5} />
                 </div>
                 <div className="flex flex-col">
-                  <h4 className="font-mono text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">
+                  <h4 className="font-mono text-[11px] font-bold text-slate-500 uppercase tracking-widest mb-1">
                     Endereço
                   </h4>
                   <p className="text-[14px] text-slate-700 font-medium leading-tight">
@@ -86,11 +86,11 @@ const ContactMap: React.FC = () => {
 
               {/* atendimento */}
               <div className="flex gap-5 group items-start text-left">
-                <div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-900 shrink-0 transition-all group-hover:bg-slate-100 group-hover:scale-110">
+                <div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-blue-600 shrink-0 transition-all group-hover:bg-slate-100 group-hover:scale-110">
                   <Clock size={22} strokeWidth={1.5} />
                 </div>
                 <div className="flex flex-col">
-                  <h4 className="font-mono text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">
+                  <h4 className="font-mono text-[11px] font-bold text-slate-500 uppercase tracking-widest mb-1">
                     Atendimento
                   </h4>
                   <p className="text-[14px] text-slate-700 font-medium leading-tight">
