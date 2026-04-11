@@ -263,12 +263,11 @@ LinkAid/
 
 ### ☕ Backend (Java)
 - Java 17+  
-- Spring Boot  
 - Maven  
 
 ### 🐍 Backend (Python)
-- FastAPI  
-- SQLAlchemy  
+- FastAPI (SE FOR IMPLEMENTADO EM IA) 
+- OracleDB
 
 ### 🗄️ Banco de Dados
 - Oracle SQL  
