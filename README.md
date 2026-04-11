@@ -173,15 +173,11 @@ O LinkAid foi projetado como uma arquitetura modular, onde cada componente possu
    - criar tickets manualmente
    - visualizar cadastros
 
-6. 🗄️ **Persistência de Dados (Database)**  
-   Garante:
-   - armazenamento seguro  
-   - histórico completo  
-   - suporte a relatórios  
+
 
 ---
 
-### 🧩 Integração entre os Módulos
+### 🧩 Integração entre os Módulos (não implementado nessa sprint**)
 
 - Frontend → Java API  
 - Java → Python (IA)  
@@ -207,7 +203,13 @@ O LinkAid foi projetado como uma arquitetura modular, onde cada componente possu
    A camada Java:
    - registra doações  
    - cria e gerencia tickets  
-   - define prioridades e responsáveis  
+   - define prioridades e responsáveis
+   - 
+2. 🗄️ Persistência de Dados (OracleDB, Python)
+   Garante:
+   - armazenamento seguro  
+   - exportação de json
+   - facilidade de acesso à dados futuramente
 
 ## 🌍 Exemplos de Aplicação
 
