@@ -43,20 +43,24 @@ const TeamDetails = () => {
   return (
     <main
       ref={containerRef}
-      className="pt-40 pb-24 bg-white min-h-screen overflow-hidden relative"
+      className="pt-30 pb-24 bg-white min-h-screen overflow-hidden relative"
     >
       <div className="container mx-auto px-6 max-w-[1200px] relative z-10">
         {/* breadcrumb */}
-        <Link
-          to="/equipe"
-          className="group flex items-center gap-2 text-blue-600 font-bold text-[10px] uppercase tracking-[0.3em] mb-12 w-fit"
-        >
-          <ArrowLeft
-            size={14}
-            className="transition-transform group-hover:-translate-x-2"
-          />
-          Voltar para a Galeria
-        </Link>
+        <div className="flex justify-center md:justify-start">
+          {" "}
+          {/* Container para controlar o alinhamento */}
+          <Link
+            to="/equipe"
+            className="group flex items-center gap-2 text-blue-600 font-bold text-[10px] uppercase tracking-[0.3em] mb-12 w-fit transition-all"
+          >
+            <ArrowLeft
+              size={14}
+              className="transition-transform group-hover:-translate-x-2"
+            />
+            Voltar para a Galeria
+          </Link>
+        </div>
 
         {/* grid ajustado para md (tablet) para manter lado a lado */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
