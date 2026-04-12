@@ -138,12 +138,7 @@ Controle financeiro integrado à plataforma.
 
 </table>
 
-<!-- // pra tirar o comentário é só excluir esse < ! -- e o de baixo
-
 <br/>
-
-// Nota Ju Guimarães: esse texto ainda não está mostrando, é um comentário. Eu fiz um texto aleatório para demonstrar sobre o nosso sistema, mas eu preciso que
-vocês escrevam certinho cada passo. É pro nosso readme ficar mais completo e profissional.
 
  ## ⚙️ Como o Sistema Funciona
 
@@ -180,7 +175,7 @@ O LinkAid foi projetado como uma arquitetura modular, onde cada componente possu
    - criar tickets manualmente
    - visualizar cadastros
 
-6. 🗄️ **Persistência de Dados (Database)**   // JU SPANOPOULOS
+6. 🗄️ **Persistência de Dados (Database)**
    Garante:
    - armazenamento seguro  
    - histórico completo  
@@ -207,8 +202,6 @@ O LinkAid foi projetado como uma arquitetura modular, onde cada componente possu
 - 🔹 Organizada  
 
 > O LinkAid é uma plataforma pensada para evolução contínua. 
-
-// remove aq tbm !-->
 
 <br/>
 
@@ -279,14 +272,8 @@ LinkAid/
 - FastAPI
 - OracleDB
 
-<!--
-
-// Nota Ju Guimarães: preciso que cada um de vocês escreva, seguindo esse modelo, sobre as tecnologias utilizadas
-
 ### 🗄️ Banco de Dados
 - Oracle SQL    
-
-!-->
 
 ### 🤖 Inteligência Artificial
 - Python 
@@ -337,10 +324,6 @@ cd java\cs3_ticket
 mvn -q exec:java -Dexec.mainClass=com.turmadobem.MainTeste
 ```
 
-
-
-<!-- // Nota Ju Guimarães: em java, python, quero que vocês façam igual esse modelo que eu fiz de Frontend, é obrigatório ter no repositório
-como executar o projeto !-->
 
 <br/>
 
