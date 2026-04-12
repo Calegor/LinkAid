@@ -138,7 +138,9 @@ Controle financeiro integrado à plataforma.
 
 </table>
 
-<!-- <br/>
+<!-- // pra tirar o comentário é só excluir esse < ! -- e o de baixo
+
+<br/>
 
 // Nota Ju Guimarães: esse texto ainda não está mostrando, é um comentário. Eu fiz um texto aleatório para demonstrar sobre o nosso sistema, mas eu preciso que
 vocês escrevam certinho cada passo. É pro nosso readme ficar mais completo e profissional.
@@ -152,25 +154,25 @@ O LinkAid foi projetado como uma arquitetura modular, onde cada componente possu
 1. 📩 **Entrada de Dados**  
    As mensagens chegam por diferentes canais (ex: formulários, e-mail e integrações externas).
 
-2. 🧠 **Processamento Inteligente (Python + IA)**   // THIAGO
+2. 🧠 **Processamento Inteligente (Python + IA)**
    O backend em Python analisa o conteúdo utilizando técnicas de NLP para:
    - identificar a intenção  
    - classificar o tipo de usuário  
    - sugerir direcionamentos  
 
-3. ☕ Orquestração e Regras de Negócio (Java)     // THIAGO
+3. ☕ **Orquestração e Regras de Negócio (Java)**
    A camada Java:
    - registra doações  
    - cria e gerencia tickets  
    - define prioridades e responsáveis
 
-4. 🎫 **Sistema de Ticketing**  <- NÃO IMPLEMENTADO ESSA SPRINT
+4. 🎫 **Sistema de Ticketing** (Não implementado nessa sprint)
    Cada interação se torna um ticket com:
    - status  
    - histórico  
    - rastreabilidade  
 
-5. 🎨 **Interface do Usuário (Frontend)**   // JU GUIMARAES
+5. 🎨 **Interface do Usuário (Frontend)**
    Permite:
    - visualizar tickets  
    - responder solicitações  
@@ -186,7 +188,7 @@ O LinkAid foi projetado como uma arquitetura modular, onde cada componente possu
 
 ---
 
-### 🧩 Integração entre os Módulos <- NÃO IMPLEMENTADO ESSA SPRINT
+### 🧩 Integração entre os Módulos (Não implementado nessa sprint)
 
 - Frontend → Java API  
 - Java → Python (IA)  
@@ -204,7 +206,9 @@ O LinkAid foi projetado como uma arquitetura modular, onde cada componente possu
 - 🔹 Inteligente  
 - 🔹 Organizada  
 
-> O LinkAid é uma plataforma pensada para evolução contínua. !-->
+> O LinkAid é uma plataforma pensada para evolução contínua. 
+
+// remove aq tbm !-->
 
 <br/>
 
@@ -228,21 +232,33 @@ O LinkAid pode ser utilizado em diversos contextos:
 
 > Uma ponte inteligente entre quem precisa e quem pode ajudar.
 
-<!-- <br/>
-
-// Nota Ju Guimarães: preciso que cada um de vocês escreva, seguindo esse modelo, sobre o conteúdo das pastas
+<br/>
 
 ## 🏗️ Estrutura do Projeto
 
-```
+```text
 LinkAid/
-├── front-end/        # React + TypeScript + TailwindCSS
+├── front-end/
+│   └── link-aid/                # Projeto React
+│       ├── public/              # Arquivos estáticos acessíveis diretamente
+│       ├── src/
+│       │   ├── assets/          # Imagens, ícones, etc.
+│       │   ├── components/      # Componentes reutilizáveis
+│       │   ├── data/            # Dados / JSON / constantes
+│       │   ├── layout/          # Estruturas base de página (layouts)
+│       │   ├── pages/           # Páginas (rotas)
+│       │   ├── App.tsx          # Rotas e estrutura principal
+│       │   ├── index.css        # Tailwind + estilos globais
+│       │   └── main.tsx         # Entry point
+│       ├── package.json         # Configurações React + TypeScript + Vite
+│       ├── tsconfig.json
+│       └── vite.config.ts       
 ├── java/             # Criação e gereciamento de tickets (JDBC)
-├── python/           # CRUD de pessoas (OracleDB), ***Processamento e IA (FastAPI)*** < - Acho melhor colocar na pasta de chatbot
+├── python/           # CRUD de pessoas (OracleDB), FastAPI
 ├── database/         # Modelagem e scripts SQL
 ├── business-model/   # Documentação e diagramas
 └── ia-chatbot/       # Análise exploratória de dados
-``` !-->
+``` 
 
 <br/>
 
@@ -255,20 +271,22 @@ LinkAid/
 - TailwindCSS
 - Visual Studio Code
 
-<!--
-
-// Nota Ju Guimarães: preciso que cada um de vocês escreva, seguindo esse modelo, sobre as tecnologias utilizadas
-
 ### ☕ Backend (Java)
 - Java 17+  
 - Maven  
 
 ### 🐍 Backend (Python)
-- FastAPI (SE FOR IMPLEMENTADO EM IA) 
+- FastAPI
 - OracleDB
 
+<!--
+
+// Nota Ju Guimarães: preciso que cada um de vocês escreva, seguindo esse modelo, sobre as tecnologias utilizadas
+
 ### 🗄️ Banco de Dados
-- Oracle SQL    !-->
+- Oracle SQL    
+
+!-->
 
 ### 🤖 Inteligência Artificial
 - Python 
@@ -283,35 +301,43 @@ LinkAid/
 Siga os passos abaixo para executar o projeto localmente:
 
 ### 📥 Clonando o repositório
-```
+```bash
 git clone https://github.com/Calegor/LinkAid.git
 cd LinkAid
 ```
 
----
+<br/>
 
 ### ▶️ Frontend
 
-```
+```bash
 cd front-end
 npm install
 npm run dev
 ```
-### ▶️ python
 
-```
+O frontend estará disponível em:
+👉 http://localhost:5173
+
+<br/>
+
+### ▶️ Python
+
+```bash
 cd python\cs3_contato
 python main.py
 ```
-### ▶️ java
 
-```
+<br/>
+
+### ▶️ Java
+
+```bash
 cd java\cs3_ticket
 mvn -q exec:java -Dexec.mainClass=com.turmadobem.MainTeste
 ```
 
-O frontend estará disponível em:
-👉 http://localhost:5173
+
 
 <!-- // Nota Ju Guimarães: em java, python, quero que vocês façam igual esse modelo que eu fiz de Frontend, é obrigatório ter no repositório
 como executar o projeto !-->
