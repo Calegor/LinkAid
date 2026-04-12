@@ -28,7 +28,7 @@ export const technologiesData: Technology[] = [
     id: "python",
     name: "Python", 
     fileName: "main.py",
-    desc: "Linguagem poderosa utilizada no LinkAid para automação de fluxos, scripts de inteligência e processamento de dados do backend.", 
+    desc: "Linguagem poderosa utilizada para automação de fluxos, scripts de inteligência e processamento de dados do backend.", 
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
     labels: ["Automação", "Scripts", "Back-end"]
   },
@@ -60,7 +60,7 @@ export const technologiesData: Technology[] = [
     id: "astah",
     name: "Astah", 
     fileName: "modeling.astah",
-    desc: "Ferramenta fundamental na fase de design do sistema para modelagem UML, diagramas de caso de uso e arquitetura de software.", 
+    desc: "Ferramenta fundamental na fase de design do sistema para modelagem UML, diagramas de caso de uso e de atividade e arquitetura de software.", 
     icon: "https://astah.net/wp-content/uploads/2019/07/Astah_blue.svg",
     labels: ["UML", "Modelagem", "Arquitetura"]
   },
