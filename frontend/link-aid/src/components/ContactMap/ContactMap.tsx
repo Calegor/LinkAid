@@ -77,7 +77,7 @@ const ContactMap: React.FC = () => {
                     Endereço
                   </h4>
                   <p className="text-[14px] text-slate-700 font-medium leading-tight">
-                    Av. Paulista, 1000 - Bela Vista
+                    Av. Paulista, 1100 - Bela Vista
                     <br />
                     São Paulo - SP, 01310-100
                   </p>
