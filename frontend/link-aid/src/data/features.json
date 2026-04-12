@@ -18,7 +18,7 @@
   {
     "id": "ia-triagem",
     "name": "IA Triagem",
-    "desc": "Nossa IA analisa a urgência de cada ticket automaticamente.",
+    "desc": "Nossa IA analisa a urgência e o departamento de cada ticket automaticamente.",
     "tech": "LLM Custom Training",
     "icon": "Cpu",
     "color": "#7c3aed"
@@ -26,7 +26,7 @@
   {
     "id": "analytics",
     "name": "Analytics",
-    "desc": "Dashboards preditivos para antecipar gargalos na operação.",
+    "desc": "Dashboards com relatórios e análises de dados úteis.",
     "tech": "Data Viz High-Res",
     "icon": "BarChart3",
     "color": "#10b981"
@@ -42,7 +42,7 @@
   {
     "id": "global",
     "name": "Global",
-    "desc": "Infraestrutura resiliente preparada para escala mundial.",
+    "desc": "Infraestrutura resiliente preparada para escala global.",
     "tech": "Edge Computing",
     "icon": "Globe",
     "color": "#06b6d4"
@@ -50,7 +50,7 @@
   {
     "id": "modular",
     "name": "Modular",
-    "desc": "Ative apenas os módulos que sua equipe realmente precisa.",
+    "desc": "Personalize sua experiência e ative apenas os módulos que sua equipe precisa.",
     "tech": "Microservices Based",
     "icon": "Layers",
     "color": "#6366f1"
