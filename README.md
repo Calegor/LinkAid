@@ -14,11 +14,10 @@ Centralize, automatize e escale o atendimento sem perder o toque humano.
   
 <br>
 
-<p align="center">
   <img src="frontend/link-aid/src/assets/images/painel/dashboard.png" alt="Interface do LinkAid" width="100%">
-</p>
 
 </div>
+
 <br/>
 
 ---
@@ -153,19 +152,25 @@ O LinkAid foi projetado como uma arquitetura modular, onde cada componente possu
 1. 📩 **Entrada de Dados**  
    As mensagens chegam por diferentes canais (ex: formulários, e-mail e integrações externas).
 
-2. 🧠 **Processamento Inteligente (Python + IA)**  
+2. 🧠 **Processamento Inteligente (Python + IA)**   // THIAGO
    O backend em Python analisa o conteúdo utilizando técnicas de NLP para:
    - identificar a intenção  
    - classificar o tipo de usuário  
    - sugerir direcionamentos  
 
-4. 🎫 **Sistema de Ticketing**  <- NÃO IMPLEMENTADO ESSA SPRINT**
+3. ☕ Orquestração e Regras de Negócio (Java)     // THIAGO
+   A camada Java:
+   - registra doações  
+   - cria e gerencia tickets  
+   - define prioridades e responsáveis
+
+4. 🎫 **Sistema de Ticketing**  <- NÃO IMPLEMENTADO ESSA SPRINT
    Cada interação se torna um ticket com:
    - status  
    - histórico  
    - rastreabilidade  
 
-5. 🎨 **Interface do Usuário (Frontend)**  
+5. 🎨 **Interface do Usuário (Frontend)**   // JU GUIMARAES
    Permite:
    - visualizar tickets  
    - responder solicitações  
@@ -173,11 +178,15 @@ O LinkAid foi projetado como uma arquitetura modular, onde cada componente possu
    - criar tickets manualmente
    - visualizar cadastros
 
-
+6. 🗄️ **Persistência de Dados (Database)**   // JU SPANOPOULOS
+   Garante:
+   - armazenamento seguro  
+   - histórico completo  
+   - suporte a relatórios 
 
 ---
 
-### 🧩 Integração entre os Módulos <- NÃO IMPLEMENTADO ESSA SPRINT**
+### 🧩 Integração entre os Módulos <- NÃO IMPLEMENTADO ESSA SPRINT
 
 - Frontend → Java API  
 - Java → Python (IA)  
@@ -198,18 +207,6 @@ O LinkAid foi projetado como uma arquitetura modular, onde cada componente possu
 > O LinkAid é uma plataforma pensada para evolução contínua. !-->
 
 <br/>
-
-1. ☕ Orquestração e Regras de Negócio (Java)  
-   A camada Java:
-   - registra doações  
-   - cria e gerencia tickets  
-   - define prioridades e responsáveis
-   - 
-2. 🗄️ Persistência de Dados (OracleDB, Python)
-   Garante:
-   - armazenamento seguro  
-   - exportação de json
-   - facilidade de acesso à dados futuramente
 
 ## 🌍 Exemplos de Aplicação
 
@@ -239,12 +236,12 @@ O LinkAid pode ser utilizado em diversos contextos:
 
 ```
 LinkAid/
-├── front-end/        # React + TypeScript
-├── java/             # Criação e gereciamento de tickets (jdbc)
-├── python/           # CRUD de pessoas (oracledb), ***Processamento e IA (FastAPI)*** < - Acho melhor colocar na pasta de chatbot
+├── front-end/        # React + TypeScript + TailwindCSS
+├── java/             # Criação e gereciamento de tickets (JDBC)
+├── python/           # CRUD de pessoas (OracleDB), ***Processamento e IA (FastAPI)*** < - Acho melhor colocar na pasta de chatbot
 ├── database/         # Modelagem e scripts SQL
 ├── business-model/   # Documentação e diagramas
-└── ia-chatbot/       # Modelos de IA
+└── ia-chatbot/       # Análise exploratória de dados
 ``` !-->
 
 <br/>
@@ -255,7 +252,8 @@ LinkAid/
 - VITE
 - React  
 - TypeScript  
-- TailwindCSS 
+- TailwindCSS
+- Visual Studio Code
 
 <!--
 
@@ -270,11 +268,13 @@ LinkAid/
 - OracleDB
 
 ### 🗄️ Banco de Dados
-- Oracle SQL  
+- Oracle SQL    !-->
 
 ### 🤖 Inteligência Artificial
-- NLP (Processamento de Linguagem Natural)  
-- Classificação de texto  !-->
+- Python 
+- Pandas
+- Protly Express
+- Google Colab
 
 <br/>
 
