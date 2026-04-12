@@ -9,8 +9,8 @@ Centralize, automatize e escale o atendimento sem perder o toque humano.
 🔗 **Acesse o repositório:**  
 👉 https://github.com/Calegor/LinkAid
 
-<!-- 🔗 **Acesse o vídeo:**  
-👉 https:// !-->
+🔗 **Acesse o vídeo:**  
+👉 https://youtu.be/IK4B1GOjPhk
   
 <br>
 
