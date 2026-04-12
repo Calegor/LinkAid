@@ -14,7 +14,7 @@ A vitrine digital da próxima geração em automação e centralização de cont
 🔗 **Acesse o repositório do projeto**
 👉 [github.com/Calegor/LinkAid](https://github.com/Calegor/LinkAid)
 
-🔗 **Acesse o vídeo:**  
+🔗 **Acesse o vídeo:**
 👉 [YouTube](https://youtu.be/IK4B1GOjPhk)
 
 🔗 **Veja o site online:**
