@@ -297,6 +297,18 @@ cd front-end
 npm install
 npm run dev
 ```
+### ▶️ python
+
+```
+cd python\cs3_contato
+python main.py
+```
+### ▶️ java
+
+```
+cd java\cs3_ticket
+mvn -q exec:java -Dexec.mainClass=com.turmadobem.MainTeste
+```
 
 O frontend estará disponível em:
 👉 http://localhost:5173
